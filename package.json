@@ -1,0 +1,24 @@
+{
+  "name": "Oscar_Cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "npx cypress open && cypress run --spec \"cypress/integration/*.js\" --reporter mocha-allure-reporter",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "test": "npm run cy:run || npm run posttest",
+    "posttest": "npm run report:allure"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "allure-commandline": "^2.17.2",
+    "cypress": "^9.6.0",
+    "mocha-allure-reporter": "^1.4.0"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.26.5",
+    "cypress-xpath": "^1.6.2"
+  }
+}

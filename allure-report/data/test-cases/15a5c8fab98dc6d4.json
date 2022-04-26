@@ -1,0 +1,48 @@
+{
+  "uid" : "15a5c8fab98dc6d4",
+  "name" : "Login Into Oscar Website",
+  "fullName" : "Login into Oscar.Login Into Oscar Website",
+  "historyId" : "3ca4bf3a2b993040cb594fb1715717e7",
+  "time" : {
+    "start" : 1650926963493,
+    "stop" : 1650926983489,
+    "duration" : 19996
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Login into Oscar"
+  }, {
+    "name" : "testClass",
+    "value" : "Login into Oscar"
+  }, {
+    "name" : "testMethod",
+    "value" : "Login Into Oscar Website"
+  }, {
+    "name" : "package",
+    "value" : "Login into Oscar"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "15a5c8fab98dc6d4.json",
+  "parameterValues" : [ ]
+}

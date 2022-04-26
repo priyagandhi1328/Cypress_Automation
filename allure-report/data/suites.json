@@ -1,0 +1,26 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Login into Oscar",
+    "children" : [ {
+      "name" : "Login Into Oscar Website",
+      "uid" : "4122c8c27ff191b5",
+      "parentUid" : "e1485ea2131b29bfc5f699e574f74538",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650927499959,
+        "stop" : 1650927520454,
+        "duration" : 20495
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 12,
+      "retriesStatusChange" : true,
+      "parameters" : [ ]
+    } ],
+    "uid" : "e1485ea2131b29bfc5f699e574f74538"
+  } ]
+}
