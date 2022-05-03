@@ -1,0 +1,99 @@
+{
+  "uid" : "cc3e71ed042e1ccc",
+  "name" : "Create a New Applicant",
+  "fullName" : "Verify that user is able to create a new contact.Create a New Applicant",
+  "historyId" : "cccabcfaca36f1db78cb017635ee118f",
+  "time" : {
+    "start" : 1651228439272,
+    "stop" : 1651228521938,
+    "duration" : 82666
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 6,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Verify that user is able to create a new contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Verify that user is able to create a new contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Create a New Applicant"
+  }, {
+    "name" : "package",
+    "value" : "Verify that user is able to create a new contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "7e30c02ec61dd19d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651182161149,
+        "stop" : 1651182200694,
+        "duration" : 39545
+      }
+    }, {
+      "uid" : "b3783020253f9711",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651181783096,
+        "stop" : 1651181822509,
+        "duration" : 39413
+      }
+    }, {
+      "uid" : "50531068f3ed6166",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651180912885,
+        "stop" : 1651180947415,
+        "duration" : 34530
+      }
+    }, {
+      "uid" : "5e6187338068ee4f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651180459368,
+        "stop" : 1651180574882,
+        "duration" : 115514
+      }
+    }, {
+      "uid" : "2025038b9b88f388",
+      "status" : "broken",
+      "statusDetails" : "`cy.type()` can only be called on a single element. Your subject contained 2 elements.\n                \n                https://on.cypress.io/type",
+      "time" : {
+        "start" : 1651179971595,
+        "stop" : 1651180009259,
+        "duration" : 37664
+      }
+    }, {
+      "uid" : "1f4a6e79f078c6fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651179167391,
+        "stop" : 1651179183600,
+        "duration" : 16209
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "cc3e71ed042e1ccc.json",
+  "parameterValues" : [ ]
+}

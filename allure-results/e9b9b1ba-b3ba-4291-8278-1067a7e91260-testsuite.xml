@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1650997821422' stop='1650997845227'>
+    <name>Login into Oscar</name>
+    <title>Login into Oscar</title>
+    <test-cases>
+        <test-case start='1650997821422' status='broken' stop='1650997845132'>
+            <name>Login Into Oscar Website</name>
+            <title>Login Into Oscar Website</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>`cy.wait()` only accepts a number, an alias of a route, or an array of aliases of routes. You passed: `undefined`
+                
+                https://on.cypress.io/wait</message>
+                <stack-trace>CypressError: `cy.wait()` only accepts a number, an alias of a route, or an array of aliases of routes. You passed: `undefined`
+                
+                https://on.cypress.io/wait
+                    at throwErr (https://agent-cannect-development.oscarintelligence.net/__cypress/runner/cypress_runner.js:166589:72)
+                    at Context.wait (https://agent-cannect-development.oscarintelligence.net/__cypress/runner/cypress_runner.js:166887:16)
+                    at Context.&lt;anonymous> (https://agent-cannect-development.oscarintelligence.net/__cypress/runner/cypress_runner.js:178136:19)
+                From Your Spec Code:
+                    at Context.eval (https://agent-cannect-development.oscarintelligence.net/__cypress/tests?p=cypress\integration\Login_spec.js:214:8)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

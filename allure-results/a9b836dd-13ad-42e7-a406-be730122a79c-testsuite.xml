@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1651230068048' stop='1651230113726'>
+    <name>Login into Oscar</name>
+    <title>Login into Oscar</title>
+    <test-cases>
+        <test-case start='1651230068048' status='broken' stop='1651230113677'>
+            <name>Login Into Oscar Website</name>
+            <title>Login Into Oscar Website</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>`cy.screenshot()` timed out waiting `30000ms` to complete.</message>
+                <stack-trace>CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.
+                    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:164814:81
+                    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)
+                    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:8144:41
+                    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)
+                    at Promise._settlePromiseFromHandler (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:10957:31)
+                    at Promise._settlePromise (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11014:18)
+                    at Promise._settlePromise0 (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11059:10)
+                    at Promise._settlePromises (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11135:18)
+                    at _drainQueueStep (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7729:12)
+                    at _drainQueue (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7722:9)
+                    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7738:5)
+                    at Async.drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7608:14)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

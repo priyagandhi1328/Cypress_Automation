@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1651228856328' stop='1651228909194'>
+    <name>Login into Oscar</name>
+    <title>Login into Oscar</title>
+    <test-cases>
+        <test-case start='1651228856328' status='passed' stop='1651228909193'>
+            <name>Login Into Oscar Website</name>
+            <title>Login Into Oscar Website</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

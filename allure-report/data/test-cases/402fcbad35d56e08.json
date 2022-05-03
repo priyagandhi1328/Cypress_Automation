@@ -1,0 +1,861 @@
+{
+  "uid" : "402fcbad35d56e08",
+  "name" : "Create a hom equity loan deal and verify",
+  "fullName" : "Create a hom equity loan deal and verify",
+  "historyId" : "b32e612c2e80b32936df6a7ea5e6c803",
+  "time" : {
+    "start" : 1651498998323,
+    "stop" : 1651499041907,
+    "duration" : 43584
+  },
+  "status" : "failed",
+  "statusMessage" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+  "statusTrace" : "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:164814:81\n    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7608:14)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+    "statusTrace" : "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:164814:81\n    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7608:14)",
+    "steps" : [ {
+      "name" : "Login",
+      "time" : {
+        "start" : 1651498999544,
+        "stop" : 1651499007509,
+        "duration" : 7965
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "fixture (\"loginData\")",
+        "time" : {
+          "start" : 1651498999549,
+          "stop" : 1651498999556,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "visit https://design-portal-oscar-cannect-dev.oscarintelligence.net/login",
+        "time" : {
+          "start" : 1651498999566,
+          "stop" : 1651499001052,
+          "duration" : 1486
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "xpath //input[@type='email']",
+        "time" : {
+          "start" : 1651499001052,
+          "stop" : 1651499001061,
+          "duration" : 9
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "type demo@oscarintelligence.com",
+        "time" : {
+          "start" : 1651499001061,
+          "stop" : 1651499001654,
+          "duration" : 593
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "xpath //input[@type=\"password\"]",
+        "time" : {
+          "start" : 1651499001654,
+          "stop" : 1651499001665,
+          "duration" : 11
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "type !4Ec^Twbas5V@1p2QUrm",
+        "time" : {
+          "start" : 1651499001665,
+          "stop" : 1651499002166,
+          "duration" : 501
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "xpath //span[contains(text(),'Log in to Oscar')]",
+        "time" : {
+          "start" : 1651499002166,
+          "stop" : 1651499002179,
+          "duration" : 13
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "click",
+        "time" : {
+          "start" : 1651499002179,
+          "stop" : 1651499002479,
+          "duration" : 300
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "wait 5000",
+        "time" : {
+          "start" : 1651499002479,
+          "stop" : 1651499007488,
+          "duration" : 5009
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST 200 https://cognito-idp.ca-central-1.amazonaws.com/",
+        "time" : {
+          "start" : 1651499007486,
+          "stop" : 1651499007486,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST 200 https://cognito-idp.ca-central-1.amazonaws.com/",
+        "time" : {
+          "start" : 1651499007486,
+          "stop" : 1651499007486,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "page load --page loaded--",
+        "time" : {
+          "start" : 1651499007486,
+          "stop" : 1651499007486,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "new url https://design-portal-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007486,
+          "stop" : 1651499007486,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "new url https://design-portal-oscar-cannect-dev.oscarintelligence.net/dashboard",
+        "time" : {
+          "start" : 1651499007486,
+          "stop" : 1651499007486,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007487,
+          "stop" : 1651499007487,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+        "time" : {
+          "start" : 1651499007488,
+          "stop" : 1651499007488,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "assert expected **<a.btn.btn-secondary>** to be **visible**",
+        "time" : {
+          "start" : 1651499007488,
+          "stop" : 1651499007509,
+          "duration" : 21
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      }, {
+        "name" : "xpath //a[contains(text(),'New deal')]",
+        "time" : {
+          "start" : 1651499007509,
+          "stop" : 1651499007509,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 33,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "xpath //button[@aria-label='Open the menu']",
+      "time" : {
+        "start" : 1651499007509,
+        "stop" : 1651499007513,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "click",
+      "time" : {
+        "start" : 1651499007514,
+        "stop" : 1651499007683,
+        "duration" : 169
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499007683,
+        "stop" : 1651499007683,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499007683,
+        "stop" : 1651499007683,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "xpath (//button[@type='button'])[2]",
+      "time" : {
+        "start" : 1651499007683,
+        "stop" : 1651499007687,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "click",
+      "time" : {
+        "start" : 1651499007687,
+        "stop" : 1651499041906,
+        "duration" : 34219
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041905,
+        "stop" : 1651499041905,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041905,
+        "stop" : 1651499041905,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "uncaught exception Error: Network error: Response not successful: Received status code 400",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST 200 https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "POST 400 https://gateway-oscar-cannect-dev.oscarintelligence.net/",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "uncaught exception Error: Network error: Response not successful: Received status code 400",
+      "time" : {
+        "start" : 1651499041906,
+        "stop" : 1651499041906,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 54,
+    "hasContent" : true,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Verify that user is able to create home equity loan deal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "402fcbad35d56e08.json",
+  "parameterValues" : [ ]
+}

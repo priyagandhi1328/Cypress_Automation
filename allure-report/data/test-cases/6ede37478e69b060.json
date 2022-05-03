@@ -1,0 +1,50 @@
+{
+  "uid" : "6ede37478e69b060",
+  "name" : "enter Subject Property",
+  "fullName" : "Test verify uer is able to enter all the details of subject property.enter Subject Property",
+  "historyId" : "423124ba3255341adae869d955c3a182",
+  "time" : {
+    "start" : 1651179269872,
+    "stop" : 1651179286796,
+    "duration" : 16924
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testClass",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testMethod",
+    "value" : "enter Subject Property"
+  }, {
+    "name" : "package",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6ede37478e69b060.json",
+  "parameterValues" : [ ]
+}

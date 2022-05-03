@@ -28,3 +28,8 @@ module.exports = (on, config) => {
     allureWriter(on, config);
     return config;
 };
+
+ignoreErrors: [
+  // Ignore Safari browser errors
+  'ResizeObserver loop limit exceeded'
+];

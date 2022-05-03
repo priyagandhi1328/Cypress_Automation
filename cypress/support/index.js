@@ -18,3 +18,9 @@ import './commands'
 require('cypress-xpath')
 import '@shelex/cypress-allure-plugin';
 require('@shelex/cypress-allure-plugin');
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from
+    // failing the test
+    return false
+  })

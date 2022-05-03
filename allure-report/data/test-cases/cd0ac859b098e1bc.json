@@ -1,0 +1,48 @@
+{
+  "uid" : "cd0ac859b098e1bc",
+  "name" : "Create a hom equity loan deal and verify",
+  "fullName" : "Verify that user is able to create home equity loan deal.Create a hom equity loan deal and verify",
+  "historyId" : "2135b83150c43f4ea9864acd4cd3b4c5",
+  "time" : {
+    "start" : 1651182657906,
+    "stop" : 1651182683089,
+    "duration" : 25183
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Verify that user is able to create home equity loan deal"
+  }, {
+    "name" : "testClass",
+    "value" : "Verify that user is able to create home equity loan deal"
+  }, {
+    "name" : "testMethod",
+    "value" : "Create a hom equity loan deal and verify"
+  }, {
+    "name" : "package",
+    "value" : "Verify that user is able to create home equity loan deal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "cd0ac859b098e1bc.json",
+  "parameterValues" : [ ]
+}

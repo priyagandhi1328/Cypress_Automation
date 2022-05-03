@@ -1,0 +1,50 @@
+{
+  "uid" : "3da411061777bb7c",
+  "name" : "Create a hom equity loan deal",
+  "fullName" : "Test verify uer is able to enter all the details of subject property.Create a hom equity loan deal",
+  "historyId" : "cb46eb0c6172734a365002592b638c1b",
+  "time" : {
+    "start" : 1651179261977,
+    "stop" : 1651179269803,
+    "duration" : 7826
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testClass",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testMethod",
+    "value" : "Create a hom equity loan deal"
+  }, {
+    "name" : "package",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "3da411061777bb7c.json",
+  "parameterValues" : [ ]
+}

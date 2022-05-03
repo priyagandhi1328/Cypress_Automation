@@ -1,0 +1,280 @@
+{
+  "uid" : "c22aadb5ce9c7a1c",
+  "name" : "Login Into Oscar Website",
+  "fullName" : "Login into Oscar.Login Into Oscar Website",
+  "historyId" : "3ca4bf3a2b993040cb594fb1715717e7",
+  "time" : {
+    "start" : 1651230068048,
+    "stop" : 1651230113677,
+    "duration" : 45629
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+  "statusTrace" : "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n                    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:164814:81\n                    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n                    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:8144:41\n                    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n                    at Promise._settlePromiseFromHandler (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:10957:31)\n                    at Promise._settlePromise (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11014:18)\n                    at Promise._settlePromise0 (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11059:10)\n                    at Promise._settlePromises (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11135:18)\n                    at _drainQueueStep (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7729:12)\n                    at _drainQueue (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7722:9)\n                    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7738:5)\n                    at Async.drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7608:14)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 27,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Login into Oscar"
+  }, {
+    "name" : "testClass",
+    "value" : "Login into Oscar"
+  }, {
+    "name" : "testMethod",
+    "value" : "Login Into Oscar Website"
+  }, {
+    "name" : "package",
+    "value" : "Login into Oscar"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "74adc597a6119968",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651229506695,
+        "stop" : 1651229522101,
+        "duration" : 15406
+      }
+    }, {
+      "uid" : "3d86ccc540bb67c9",
+      "status" : "broken",
+      "statusDetails" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+      "time" : {
+        "start" : 1651229026024,
+        "stop" : 1651229067203,
+        "duration" : 41179
+      }
+    }, {
+      "uid" : "83c44ff4989f0cf1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651228856328,
+        "stop" : 1651228909193,
+        "duration" : 52865
+      }
+    }, {
+      "uid" : "a4717c6df07bf0ee",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651228547088,
+        "stop" : 1651228556446,
+        "duration" : 9358
+      }
+    }, {
+      "uid" : "be061df7db5663a5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651182222475,
+        "stop" : 1651182229689,
+        "duration" : 7214
+      }
+    }, {
+      "uid" : "3b2552fa29842e13",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651181844058,
+        "stop" : 1651181851271,
+        "duration" : 7213
+      }
+    }, {
+      "uid" : "86eff0601db1a1c0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651180964213,
+        "stop" : 1651180971280,
+        "duration" : 7067
+      }
+    }, {
+      "uid" : "313ae4908aa37c80",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651180594115,
+        "stop" : 1651180601113,
+        "duration" : 6998
+      }
+    }, {
+      "uid" : "e6ee2c108476e13d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651180050086,
+        "stop" : 1651180059326,
+        "duration" : 9240
+      }
+    }, {
+      "uid" : "2cc07d3db48e00ab",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651179233013,
+        "stop" : 1651179241587,
+        "duration" : 8574
+      }
+    }, {
+      "uid" : "866f80d3aea5e24b",
+      "status" : "broken",
+      "statusDetails" : "`cy.wait()` only accepts a number, an alias of a route, or an array of aliases of routes. You passed: `undefined`\n                \n                https://on.cypress.io/wait",
+      "time" : {
+        "start" : 1650997821422,
+        "stop" : 1650997845132,
+        "duration" : 23710
+      }
+    }, {
+      "uid" : "724b7b8986fd2f4",
+      "status" : "broken",
+      "statusDetails" : "Timed out after waiting `60000ms` for your remote page to load.\n                \n                Your page did not fire its `load` event within `60000ms`.\n                \n                You can try increasing the `pageLoadTimeout` value in `C:\\Users\\PriyaGandhi\\Desktop\\Oscar_Automation\\cypress.json` to wait longer.\n                \n                Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n                \n                When this `load` event occurs, Cypress will continue running commands.",
+      "time" : {
+        "start" : 1650997066093,
+        "stop" : 1650997135139,
+        "duration" : 69046
+      }
+    }, {
+      "uid" : "458d4a9b54026e5",
+      "status" : "broken",
+      "statusDetails" : "Syntax error, unrecognized expression: //a[contains(text(),'New deal')]",
+      "time" : {
+        "start" : 1650996956179,
+        "stop" : 1650996977635,
+        "duration" : 21456
+      }
+    }, {
+      "uid" : "b83cd46027ddd4b6",
+      "status" : "broken",
+      "statusDetails" : "Syntax error, unrecognized expression: //a[contains(text(),'New deal')]",
+      "time" : {
+        "start" : 1650996715921,
+        "stop" : 1650996749456,
+        "duration" : 33535
+      }
+    }, {
+      "uid" : "185658d056b34428",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650927499959,
+        "stop" : 1650927520454,
+        "duration" : 20495
+      }
+    }, {
+      "uid" : "37290eb432551fe2",
+      "status" : "broken",
+      "statusDetails" : "Timed out after waiting `60000ms` for your remote page to load.\n                \n                Your page did not fire its `load` event within `60000ms`.\n                \n                You can try increasing the `pageLoadTimeout` value in `C:\\Users\\PriyaGandhi\\Desktop\\Oscar_Automation\\cypress.json` to wait longer.\n                \n                Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n                \n                When this `load` event occurs, Cypress will continue running commands.",
+      "time" : {
+        "start" : 1650927262607,
+        "stop" : 1650927326371,
+        "duration" : 63764
+      }
+    }, {
+      "uid" : "b47c85441c736c82",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650926963493,
+        "stop" : 1650926983489,
+        "duration" : 19996
+      }
+    }, {
+      "uid" : "b41812851de5a148",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650926232292,
+        "stop" : 1650926253232,
+        "duration" : 20940
+      }
+    }, {
+      "uid" : "46cf9c5f94923fd7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650926123340,
+        "stop" : 1650926177822,
+        "duration" : 54482
+      }
+    }, {
+      "uid" : "555477ac6aa142f4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650925845987,
+        "stop" : 1650925865075,
+        "duration" : 19088
+      }
+    }, {
+      "uid" : "14bf782c3dfa9161",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650925413893,
+        "stop" : 1650925434411,
+        "duration" : 20518
+      }
+    }, {
+      "uid" : "c5520696657cf5bc",
+      "status" : "broken",
+      "statusDetails" : "Timed out after waiting `60000ms` for your remote page to load.\n                \n                Your page did not fire its `load` event within `60000ms`.\n                \n                You can try increasing the `pageLoadTimeout` value in `C:\\Users\\PriyaGandhi\\Desktop\\Oscar_Automation\\cypress.json` to wait longer.\n                \n                Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n                \n                When this `load` event occurs, Cypress will continue running commands.",
+      "time" : {
+        "start" : 1650925077794,
+        "stop" : 1650925141506,
+        "duration" : 63712
+      }
+    }, {
+      "uid" : "d1e916575a137483",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650924759271,
+        "stop" : 1650924778779,
+        "duration" : 19508
+      }
+    }, {
+      "uid" : "13f7d01f08b524f8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650923360712,
+        "stop" : 1650923377397,
+        "duration" : 16685
+      }
+    }, {
+      "uid" : "5186c29e5cda0e04",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650923042764,
+        "stop" : 1650923093710,
+        "duration" : 50946
+      }
+    }, {
+      "uid" : "a27e2862d90b7881",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650922712987,
+        "stop" : 1650922733665,
+        "duration" : 20678
+      }
+    }, {
+      "uid" : "d43132e121e4e42d",
+      "status" : "broken",
+      "statusDetails" : "Timed out after waiting `60000ms` for your remote page to load.\n                \n                Your page did not fire its `load` event within `60000ms`.\n                \n                You can try increasing the `pageLoadTimeout` value in `C:\\Users\\PriyaGandhi\\Desktop\\Oscar_Automation\\cypress.json` to wait longer.\n                \n                Browsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n                \n                When this `load` event occurs, Cypress will continue running commands.",
+      "time" : {
+        "start" : 1650922383313,
+        "stop" : 1650922446998,
+        "duration" : 63685
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "c22aadb5ce9c7a1c.json",
+  "parameterValues" : [ ]
+}

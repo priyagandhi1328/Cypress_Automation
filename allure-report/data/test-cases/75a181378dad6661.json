@@ -1,0 +1,257 @@
+{
+  "uid" : "75a181378dad6661",
+  "name" : "Create a New Applicant",
+  "fullName" : "Create a New Applicant",
+  "historyId" : "8baf5f469a48221ca1249d67a7af5f3a",
+  "time" : {
+    "start" : 1651587311216,
+    "stop" : 1651587311690,
+    "duration" : 474
+  },
+  "status" : "failed",
+  "statusMessage" : "`cy.visit()` failed trying to load:\n\n/login\n\nWe failed looking for this file at the path:\n\n/Users/PriyaGandhi/Desktop/Oscar_Automation/login\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found",
+  "statusTrace" : "CypressError: `cy.visit()` failed trying to load:\n\n/login\n\nWe failed looking for this file at the path:\n\n/Users/PriyaGandhi/Desktop/Oscar_Automation/login\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n    at http://localhost:60937/__cypress/runner/cypress_runner.js:163310:84\n    at visitFailedByErr (http://localhost:60937/__cypress/runner/cypress_runner.js:162631:12)\n    at http://localhost:60937/__cypress/runner/cypress_runner.js:163290:13\n    at tryCatcher (http://localhost:60937/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:60937/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:60937/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:60937/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:60937/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:60937/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:60937/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:60937/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:60937/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:60937/__cypress/tests?p=cypress\\integration\\TestVerifyCreateNewContact.js:293:8)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 18,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "`cy.visit()` failed trying to load:\n\n/login\n\nWe failed looking for this file at the path:\n\n/Users/PriyaGandhi/Desktop/Oscar_Automation/login\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found",
+    "statusTrace" : "CypressError: `cy.visit()` failed trying to load:\n\n/login\n\nWe failed looking for this file at the path:\n\n/Users/PriyaGandhi/Desktop/Oscar_Automation/login\n\nThe internal Cypress web server responded with:\n\n  > 404: Not Found\n    at http://localhost:60937/__cypress/runner/cypress_runner.js:163310:84\n    at visitFailedByErr (http://localhost:60937/__cypress/runner/cypress_runner.js:162631:12)\n    at http://localhost:60937/__cypress/runner/cypress_runner.js:163290:13\n    at tryCatcher (http://localhost:60937/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:60937/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:60937/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:60937/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:60937/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:60937/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:60937/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:60937/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:60937/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:60937/__cypress/tests?p=cypress\\integration\\TestVerifyCreateNewContact.js:293:8)",
+    "steps" : [ {
+      "name" : "\"before each\" hook",
+      "time" : {
+        "start" : 1651587311220,
+        "stop" : 1651587311298,
+        "duration" : 78
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "fixture (\"homeEquityLoanDetails\")",
+        "time" : {
+          "start" : 1651587311278,
+          "stop" : 1651587311296,
+          "duration" : 18
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "hasContent" : false,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "hasContent" : true,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "visit /login",
+      "time" : {
+        "start" : 1651587311306,
+        "stop" : 1651587311688,
+        "duration" : 382
+      },
+      "status" : "failed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : false,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "86151d0116316558",
+      "name" : "TestVerifyCreateNewContact.js:2022-05-03T14:15:11.388Z",
+      "source" : "86151d0116316558.png",
+      "type" : "image/png",
+      "size" : 42426
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Verify that user is able to create a new contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "dcbc903bdfa3d806",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651502522027,
+        "stop" : 1651502564455,
+        "duration" : 42428
+      }
+    }, {
+      "uid" : "d700bdda9420ecb3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651499827119,
+        "stop" : 1651499866482,
+        "duration" : 39363
+      }
+    }, {
+      "uid" : "9e6f91f6bd43ad6b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651499270187,
+        "stop" : 1651499313143,
+        "duration" : 42956
+      }
+    }, {
+      "uid" : "98621e14bc03d95e",
+      "status" : "failed",
+      "statusDetails" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+      "time" : {
+        "start" : 1651498925765,
+        "stop" : 1651498993889,
+        "duration" : 68124
+      }
+    }, {
+      "uid" : "1642e0680c5899e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651238584047,
+        "stop" : 1651238624805,
+        "duration" : 40758
+      }
+    }, {
+      "uid" : "3844a499647c3523",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651235450339,
+        "stop" : 1651235490346,
+        "duration" : 40007
+      }
+    }, {
+      "uid" : "83208e706d9b56c8",
+      "status" : "failed",
+      "statusDetails" : "Timed out retrying after 4000ms: Expected to find element: `//input[@type='emails']`, but never found it.",
+      "time" : {
+        "start" : 1651230261158,
+        "stop" : 1651230303657,
+        "duration" : 42499
+      }
+    }, {
+      "uid" : "25407231c409852d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651228059510,
+        "stop" : 1651228166402,
+        "duration" : 106892
+      }
+    }, {
+      "uid" : "4dd44f868c8923f1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651227852403,
+        "stop" : 1651227890261,
+        "duration" : 37858
+      }
+    }, {
+      "uid" : "463fc9b265e4493d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651227554827,
+        "stop" : 1651227596879,
+        "duration" : 42052
+      }
+    }, {
+      "uid" : "e7a5a23a7b362500",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651227332773,
+        "stop" : 1651227371432,
+        "duration" : 38659
+      }
+    }, {
+      "uid" : "64b87850d18c4538",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651186446126,
+        "stop" : 1651186518544,
+        "duration" : 72418
+      }
+    }, {
+      "uid" : "ff4bd6d23b417629",
+      "status" : "failed",
+      "statusDetails" : "Timed out retrying after 4000ms: Expected to find element: `//a[contains(text(),'New deal')]`, but never found it.",
+      "time" : {
+        "start" : 1651186233682,
+        "stop" : 1651186247354,
+        "duration" : 13672
+      }
+    }, {
+      "uid" : "8aed2b6c9d9fb5ee",
+      "status" : "failed",
+      "statusDetails" : "`cy.type()` can only be called on a single element. Your subject contained 2 elements.\n\nhttps://on.cypress.io/type",
+      "time" : {
+        "start" : 1651185466578,
+        "stop" : 1651185504651,
+        "duration" : 38073
+      }
+    }, {
+      "uid" : "496e6e2ff856ec02",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651185244375,
+        "stop" : 1651185286193,
+        "duration" : 41818
+      }
+    }, {
+      "uid" : "d3826e4652552791",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651184930019,
+        "stop" : 1651185001022,
+        "duration" : 71003
+      }
+    }, {
+      "uid" : "c2dd924213e392f",
+      "status" : "failed",
+      "statusDetails" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+      "time" : {
+        "start" : 1651184615305,
+        "stop" : 1651184661393,
+        "duration" : 46088
+      }
+    }, {
+      "uid" : "8a2b8297ea6df139",
+      "status" : "passed",
+      "time" : {
+        "start" : 1651184167641,
+        "stop" : 1651184211937,
+        "duration" : 44296
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "75a181378dad6661.json",
+  "parameterValues" : [ ]
+}

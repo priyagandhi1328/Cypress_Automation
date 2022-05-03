@@ -1,0 +1,15 @@
+{
+    "Firstname": "Rishav",
+    "Lastname": "Kaundal",
+    "AnnualIncome": "1000000",
+    "CellPhone": "08628075659",
+    "WorkPhone":"02807569877",
+    "Email": "rishav123@gmail.com",
+    "SubjectProperty": "123 Glen Road, Toronto, ON, Canada",
+    "ApplicantEstimate": "500000",
+    "OnSiteAppraisal": "600000",
+    "DesktopAppraisal": "700000",
+    "ApplicantEstimateValue": "Applicant estimate",
+    "OnSiteAppraisalValue": "On-site appraisal",
+    "DesktopAppraisalValue": "Desktop appraisal"
+}

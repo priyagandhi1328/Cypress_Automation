@@ -1,0 +1,50 @@
+{
+  "uid" : "1f80287a406a978f",
+  "name" : "verify all the values under valution",
+  "fullName" : "Test verify uer is able to enter all the details of subject property.verify all the values under valution",
+  "historyId" : "3fd28c0640d470f6fc6845e61d6b256d",
+  "time" : {
+    "start" : 1651180068260,
+    "stop" : 1651180127670,
+    "duration" : 59410
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected '--' to include '700000'",
+  "statusTrace" : "AssertionError: expected '--' to include '700000'\n                    at Home_Equity_Loan.verifyDesktopAppraisalValue (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\TestVerifyUserIsAbleToEnterAllTheSubjectrPropertydetails.js:261:156)\n                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\TestVerifyUserIsAbleToEnterAllTheSubjectrPropertydetails.js:304:20)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testClass",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testMethod",
+    "value" : "verify all the values under valution"
+  }, {
+    "name" : "package",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1f80287a406a978f.json",
+  "parameterValues" : [ ]
+}

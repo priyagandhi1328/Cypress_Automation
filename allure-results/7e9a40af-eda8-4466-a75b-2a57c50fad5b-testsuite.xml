@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1651179101404' stop='1651179183602'>
+    <name>Verify that user is able to create a new contact</name>
+    <title>Verify that user is able to create a new contact</title>
+    <test-cases>
+        <test-case start='1651179101404' status='passed' stop='1651179159488'>
+            <name>Login into oscar</name>
+            <title>Login into oscar</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1651179159548' status='passed' stop='1651179167273'>
+            <name>Create a hom equity loan deal and verify</name>
+            <title>Create a hom equity loan deal and verify</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1651179167391' status='passed' stop='1651179183600'>
+            <name>Create a New Applicant</name>
+            <title>Create a New Applicant</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

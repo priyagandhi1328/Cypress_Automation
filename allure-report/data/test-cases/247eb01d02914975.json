@@ -1,0 +1,50 @@
+{
+  "uid" : "247eb01d02914975",
+  "name" : "Login into oscar",
+  "fullName" : "Test verify uer is able to enter all the details of subject property.Login into oscar",
+  "historyId" : "37a8f656bcdf7fd5baca5c792a00b195",
+  "time" : {
+    "start" : 1651179251737,
+    "stop" : 1651179261897,
+    "duration" : 10160
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testClass",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "testMethod",
+    "value" : "Login into oscar"
+  }, {
+    "name" : "package",
+    "value" : "Test verify uer is able to enter all the details of subject property"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "247eb01d02914975.json",
+  "parameterValues" : [ ]
+}

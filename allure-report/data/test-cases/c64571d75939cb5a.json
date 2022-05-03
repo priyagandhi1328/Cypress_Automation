@@ -1,0 +1,50 @@
+{
+  "uid" : "c64571d75939cb5a",
+  "name" : "Create a hom equity loan deal and verify",
+  "fullName" : "Verify that user is able to create a new contact.Create a hom equity loan deal and verify",
+  "historyId" : "3d51553186c9919e87f4ba4ba98410c4",
+  "time" : {
+    "start" : 1651179159548,
+    "stop" : 1651179167273,
+    "duration" : 7725
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Verify that user is able to create a new contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Verify that user is able to create a new contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Create a hom equity loan deal and verify"
+  }, {
+    "name" : "package",
+    "value" : "Verify that user is able to create a new contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c64571d75939cb5a.json",
+  "parameterValues" : [ ]
+}

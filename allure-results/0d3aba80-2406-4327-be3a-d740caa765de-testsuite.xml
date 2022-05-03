@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1651182161149' stop='1651182200694'>
+    <name>Verify that user is able to create a new contact</name>
+    <title>Verify that user is able to create a new contact</title>
+    <test-cases>
+        <test-case start='1651182161149' status='passed' stop='1651182200694'>
+            <name>Create a New Applicant</name>
+            <title>Create a New Applicant</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
