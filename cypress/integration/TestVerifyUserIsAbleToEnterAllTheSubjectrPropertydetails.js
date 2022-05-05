@@ -12,17 +12,23 @@ describe('Test verify user is able to enter all the details of subject property'
         })
     })
 
-    it('verify all the values under valution', function () {
-        cy.visit("/login")
+    it('enter values under valuation tab', function () {
         cy.Login()
         homeEquityLoan.clickOnMenuIcon()
-        homeEquityLoan.createHomeEquityLoanDeal() 
-    //    // homeEquityLoan.enterSubjectProperty(this.data.SubjectProperty)
-    //     //homeEquityLoan.clickOnEditButton()
-    //     homeEquityLoan.enterValuesUnderValuation(this.data.ApplicantEstimate, this.data.OnSiteAppraisal, this.data.DesktopAppraisal)
-    //     homeEquityLoan.clickOnDoneButton()
-    //     homeEquityLoan.verifyApplicantEstimateValue(this.data.ApplicantEstimateValue,this.data.ApplicantEstimate)
-    //     homeEquityLoan.verifyOnSiteAppraisalValue(this.data.OnSiteAppraisalValue,this.data.OnSiteAppraisal)
-    //     homeEquityLoan.verifyDesktopAppraisalValue(this.data.DesktopAppraisalValue,this.data.DesktopAppraisal)
+        homeEquityLoan.createHomeEquityLoanDeal()
+        homeEquityLoan.enterSubjectProperty(this.data.SubjectProperty)
+        homeEquityLoan.clickOnEditButton()
+        homeEquityLoan.enterValuesUnderValuation(this.data.ApplicantEstimate, this.data.OnSiteAppraisal, this.data.DesktopAppraisal)
+    })
+
+    it('enter the expiration date', function () {
+        homeEquityLoan.selectExpiryDate()
+        homeEquityLoan.clickOnDoneButton()
+    })
+
+    it('verify all the valution under valution tab', function () {
+        homeEquityLoan.verifyApplicantEstimateValue(this.data.ApplicantEstimateValue, this.data.ApplicantEstimate)
+        homeEquityLoan.verifyOnSiteAppraisalValue(this.data.OnSiteAppraisalValue, this.data.OnSiteAppraisal)
+        homeEquityLoan.verifyDesktopAppraisalValue(this.data.DesktopAppraisalValue, this.data.DesktopAppraisal)
     })
 })

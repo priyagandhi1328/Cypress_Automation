@@ -1,5 +1,7 @@
 
-class Home_Equity_Loan {
+import BaseTest from "../Pages/BaseTest"
+
+class Home_Equity_Loan extends BaseTest {
 
     menuIcon = ".bi-list"
     dropdownBtn = "button[class='btn dropdown-toggle btn-light dropdown-toggle-split']"
@@ -20,6 +22,25 @@ class Home_Equity_Loan {
     enterWorkPhoneNumber = '(//input[@placeholder="Number"])[2]'
     enterEmail = '//input[@aria-invalid="true"]'
     clickOnDone = "(//button[contains(text(),'Done')])[2]"
+    assertvalue = "input[class='form-control']"
+    selectCitizenshipBtn = '(//select[@class="custom-select"])[4]'
+    selectMaritalStatus = '(//select[@class="custom-select"])[6]'
+    enterNumberofDependants = "//label[contains(text(),'Number of dependants')]//following::input[1]"
+    enterSIN = "//label[contains(text(),'SIN')]//following::input[1]"
+    enterDriverLicence = "//label[contains(text(),'Driver')]//following::input[1]"
+    employerAddress = '(//input[@name="searchTerm"])[1]'
+    employerName = '(//input[@class="text-16 form-control"])[5]'
+    jobTitle = '(//input[@class="text-16 form-control"])[6]'
+    selectType = '(//select[@class="text-16 custom-select"])[1]'
+    selectOccupation = '(//select[@class="text-16 custom-select"])[2]'
+    enterTimeAtjobInYear = '(//input[@type="number"])[3]'
+    enterTimeInIndustryInYear = '(//input[@type="number"])[5]'
+    enterCurrentAddress = '(//input[@name="searchTerm"])[3]'
+    enterStatus = '(//select[@class="custom-select"])[7]'
+    enterAdditionalIncomeType = "//label[contains(text(),'Additional income type')]//following::select[1]"
+    enterAmount = "//label[contains(text(),'Amount')]//following::input[1]"
+    enterAdditionalIncomePeriod = "//label[contains(text(),'Additional income type')]//following::select[2]"
+    enterDateofBirth = '(//input[@placeholder="MM/DD/YYYY"])[2]'
 
     clickOnMenuIcon() {
         cy.get(this.menuIcon).click()
@@ -67,7 +88,51 @@ class Home_Equity_Loan {
         cy.xpath(this.enterWorkPhoneNumber).clear()
         cy.wait(3000)
         cy.xpath(this.enterWorkPhoneNumber).type(WorkPhone)
-        cy.xpath(this.clickOnDone).click()    
+    }
+
+    enterIdentityDetails(NumberofDependants, Sin, Driverlicense, DateofBirth) {
+        cy.contains("Identity").click()
+        cy.xpath(this.enterDateofBirth).type(DateofBirth)
+        cy.xpath(this.selectCitizenshipBtn).select('CITIZEN')
+        cy.xpath(this.selectMaritalStatus).select('Single')
+        cy.wait(3000)
+        cy.xpath(this.enterNumberofDependants).type(NumberofDependants)
+        cy.xpath(this.enterSIN).type(Sin)
+        cy.xpath(this.enterDriverLicence).click()
+        cy.wait(3000)
+        cy.xpath(this.enterDriverLicence).type(Driverlicense)
+
+    }
+
+    enterEmploymentDetails(SubjectProperty, EmployerName, JobTitle, TimeAtJob, TimeAtIndustry) {
+        cy.contains("Employment").click()
+        cy.xpath(this.employerAddress).click({ force: true })
+        cy.xpath(this.employerAddress).type(SubjectProperty)
+        cy.xpath(this.employerName).type(EmployerName)
+        cy.xpath(this.jobTitle).type(JobTitle)
+        cy.xpath(this.selectType).select("PART_TIME")
+        cy.xpath(this.selectOccupation).select("MANAGEMENT")
+        cy.xpath(this.enterTimeAtjobInYear).type(TimeAtJob)
+        cy.xpath(this.enterTimeInIndustryInYear).type(TimeAtIndustry)
+    }
+
+    enterHomeAddress() {
+        cy.contains('Home address').click()
+        cy.get('.mb-1 > div > .btn').click()
+        cy.xpath(this.enterStatus).select("Own")
+    }
+
+    enterOtherIncome(Amount) {
+        cy.contains('Other income').click()
+        cy.xpath(this.enterAdditionalIncomeType).select("Salary")
+        cy.xpath(this.enterAmount).type(Amount)
+        cy.xpath(this.enterAdditionalIncomePeriod).select("Annual")
+        cy.xpath(this.clickOnDone).click()
+    }
+
+    clickOnCreditScore() {
+        cy.contains('Credit score').click()
+        cy.xpath("//button[contains(text(),'Request eID Verification')]").click()
     }
 
     clickOnEditButton() {
@@ -82,6 +147,8 @@ class Home_Equity_Loan {
         cy.contains("Valuation").click()
         cy.xpath(this.applicantEstimate).type(ApplicantEstimate)
         cy.xpath(this.onSiteAppraisal).type(OnSiteAppraisal)
+        cy.xpath(this.desktopAppraisal).clear()
+        cy.wait(3000)
         cy.xpath(this.desktopAppraisal).type(DesktopAppraisal)
     }
 
@@ -105,6 +172,112 @@ class Home_Equity_Loan {
         cy.wait(5000)
         cy.xpath("//span[contains(text(),'Applicant estimate')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', DesktopAppraisal)
     }
+
+    selectExpiryDate() {
+        cy.contains("Insurance").click()
+        cy.xpath("//label[contains(text(),'Expiry date')]//following::input[1]").type(this.randomDate())
+    }
+
+    verifyAvailableEquityValueForApplicantEstimate(ApplicantEstimate) {
+        cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
+        const getText = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
+        const availableEquity = ApplicantEstimate-getText
+        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")).and('contain', availableEquity)
+    })}
+
+    verifyAvailableEquityValueForOnsiteAppraisal(OnSiteAppraisal) {
+        cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
+        const getText = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
+        const availableEquity = OnSiteAppraisal-getText
+        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")).and('contain', availableEquity)
+    })}
+
+    verifyAvailableEquityValueForDesktopAppraisal(DesktopAppraisal) {
+        cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
+        const getText = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
+        const availableEquity = DesktopAppraisal-getText
+        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")).and('contain', availableEquity)
+    })}
+
+    verifyLTVRatioForApplicantEstimate(ApplicantEstimate) {
+        cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
+        const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
+        const LTVRatio = parseInt((totalMortgagesValue/ApplicantEstimate)*100)
+        cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', LTVRatio)
+    })}
+
+    verifyLTVRatioForOnSiteAppraisal(OnSiteAppraisal) {
+        cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
+        const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
+        const LTVRatio = parseInt((totalMortgagesValue/OnSiteAppraisal)*100)
+        cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', LTVRatio)
+    })}
+
+    verifyLTVRatioForDesktopappraisal(DesktopAppraisal) {
+        cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
+        const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
+        const LTVRatio = parseInt((totalMortgagesValue/DesktopAppraisal)*100)
+        cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', LTVRatio)
+    })}
+
+    addSavingsAssets() {
+        cy.contains("Savings").first().click()
+        cy.get(this.assertvalue).last().type(this.randomNumber())
+        cy.wait(3000)
+    }
+
+    addcreditCardLiability() {
+        cy.contains("Credit card").first().click()
+        cy.xpath("//label[contains(text(),'Balance')]//following::input[1]").type(this.randomNumber())
+        cy.wait(3000)
+    }
+
+    verifyTotalAssetsValue() {
+        cy.xpath("//dt[contains(text(),'Value')]//following::dd[1]").first().then(($text) => {
+        const savingsValue = $text.text().trim().replace("$", "").replace(",","").replace(".00","")
+        cy.log(savingsValue)
+        cy.xpath("//dt[contains(text(),'Total assets')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', savingsValue)
+    })}
+
+    verifyTotalLiabilityValue() {
+        cy.wait(5000)
+        cy.xpath("//dt[contains(text(),'Balance')]//following::dd[1]").last().then(($text) => {
+        const creditCardValue = $text.text().trim().replace("$", "").replace(",","").replace(".00","")
+        cy.log(creditCardValue)
+        cy.xpath("//dt[contains(text(),'Total liabilities')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', creditCardValue)
+    })}
+
+    verifyNetWorthValueForAssets() {
+        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().then(($text) => {
+        const availableEquityValue = $text.text().trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")
+        cy.log(availableEquityValue)
+
+        cy.xpath("//dt[contains(text(),'Total assets')]//following::dd[1]").invoke("text").then(($text) => {
+        const totalAssetsValue =  $text.trim().replace("$", "").replace(",", "")
+        cy.log(totalAssetsValue)
+
+        const netWorthValue = parseInt(availableEquityValue) + parseInt(totalAssetsValue)
+        cy.log(netWorthValue)
+
+        cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace(",", "")).and('contain', netWorthValue)
+    })
+    })}
+
+    verifyNetWorthValueForLiability() {
+        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().then(($text) => {
+        const availableEquityValue = $text.text().trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")
+        cy.log(availableEquityValue)
+
+        cy.xpath("//dt[contains(text(),'Total liabilities')]//following::dd[1]").invoke("text").then(($text) => {
+        const totalLiabilityValue =  $text.trim().replace("$", "").replace(",", "")
+        cy.log(totalLiabilityValue)
+
+        const netWorthValue = parseInt(availableEquityValue) - parseInt(totalLiabilityValue)
+        cy.log(netWorthValue)
+
+        cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace(",", "")).and('contain', netWorthValue)
+    })
+    })}
 }
 
 export default Home_Equity_Loan

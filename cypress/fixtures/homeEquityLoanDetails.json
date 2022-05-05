@@ -7,9 +7,18 @@
     "Email": "rishav123@gmail.com",
     "SubjectProperty": "123 Glen Road, Toronto, ON, Canada",
     "ApplicantEstimate": "500000",
-    "OnSiteAppraisal": "600000",
-    "DesktopAppraisal": "700000",
+    "OnSiteAppraisal": "700000",
+    "DesktopAppraisal": "900000",
     "ApplicantEstimateValue": "Applicant estimate",
     "OnSiteAppraisalValue": "On-site appraisal",
-    "DesktopAppraisalValue": "Desktop appraisal"
+    "DesktopAppraisalValue": "Desktop appraisal",
+    "NumberofDependants":"3",
+    "Sin":"692237597",
+    "Driverlicense":"U51463711809374",
+    "EmployerName":"Rishav kaundal",
+    "JobTitle":"Engineer",
+    "TimeAtJob":"4",
+    "TimeAtIndustry":"4",
+    "Amount":"880000",
+    "DateofBirth":"08/09/1998"
 }
