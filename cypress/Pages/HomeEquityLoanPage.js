@@ -1,4 +1,3 @@
-
 import BaseTest from "../Pages/BaseTest"
 
 class Home_Equity_Loan extends BaseTest {
@@ -38,7 +37,7 @@ class Home_Equity_Loan extends BaseTest {
     enterCurrentAddress = '(//input[@name="searchTerm"])[3]'
     enterStatus = '(//select[@class="custom-select"])[7]'
     enterAdditionalIncomeType = "//label[contains(text(),'Additional income type')]//following::select[1]"
-    enterAmount = "//label[contains(text(),'Amount')]//following::input[1]"
+    enterIncomeAmount = "//label[contains(text(),'Amount')]//following::input[1]"
     enterAdditionalIncomePeriod = "//label[contains(text(),'Additional income type')]//following::select[2]"
     enterDateofBirth = '(//input[@placeholder="MM/DD/YYYY"])[2]'
 
@@ -73,7 +72,7 @@ class Home_Equity_Loan extends BaseTest {
         cy.xpath(this.loanAmountText).invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', testname)
     }
 
-    createNewApplicant(Firstname, Lastname, AnnualIncome, CellPhone, Email,WorkPhone) {
+    createNewApplicant(Firstname, Lastname, AnnualIncome, CellPhone, Email, WorkPhone) {
         cy.wait(5000)
         cy.contains('create a new contact').click()
         cy.get(this.enterFirstName).type(Firstname)
@@ -125,7 +124,7 @@ class Home_Equity_Loan extends BaseTest {
     enterOtherIncome(Amount) {
         cy.contains('Other income').click()
         cy.xpath(this.enterAdditionalIncomeType).select("Salary")
-        cy.xpath(this.enterAmount).type(Amount)
+        cy.xpath(this.enterIncomeAmount).type(Amount)
         cy.xpath(this.enterAdditionalIncomePeriod).select("Annual")
         cy.xpath(this.clickOnDone).click()
     }
@@ -180,45 +179,54 @@ class Home_Equity_Loan extends BaseTest {
 
     verifyAvailableEquityValueForApplicantEstimate(ApplicantEstimate) {
         cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
-        const getText = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
-        const availableEquity = ApplicantEstimate-getText
-        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")).and('contain', availableEquity)
-    })}
+            const getText = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            const availableEquity = ApplicantEstimate - getText
+            cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")).and('contain', availableEquity)
+        })
+    }
 
     verifyAvailableEquityValueForOnsiteAppraisal(OnSiteAppraisal) {
         cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
-        const getText = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
-        const availableEquity = OnSiteAppraisal-getText
-        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")).and('contain', availableEquity)
-    })}
+            const getText = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            const availableEquity = OnSiteAppraisal - getText
+            cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")).and('contain', availableEquity)
+        })
+    }
 
     verifyAvailableEquityValueForDesktopAppraisal(DesktopAppraisal) {
         cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
-        const getText = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
-        const availableEquity = DesktopAppraisal-getText
-        cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")).and('contain', availableEquity)
-    })}
+            const getText = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            const availableEquity = DesktopAppraisal - getText
+            cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")).and('contain', availableEquity)
+        })
+    }
 
     verifyLTVRatioForApplicantEstimate(ApplicantEstimate) {
         cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
-        const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
-        const LTVRatio = parseInt((totalMortgagesValue/ApplicantEstimate)*100)
-        cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', LTVRatio)
-    })}
+            const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            const LTVRatio = (totalMortgagesValue / ApplicantEstimate) * 100
+            let roundOffValue = Math.round(LTVRatio)
+            cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', roundOffValue)
+        })
+    }
 
     verifyLTVRatioForOnSiteAppraisal(OnSiteAppraisal) {
         cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
-        const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
-        const LTVRatio = parseInt((totalMortgagesValue/OnSiteAppraisal)*100)
-        cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', LTVRatio)
-    })}
+            const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            const LTVRatio = (totalMortgagesValue / OnSiteAppraisal) * 100
+            let roundOffValue = Math.round(LTVRatio)
+            cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', roundOffValue)
+        })
+    }
 
     verifyLTVRatioForDesktopappraisal(DesktopAppraisal) {
         cy.xpath("//dt[contains(text(),'Total mortgages')]//following::dd[1]").then(($text) => {
-        const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",","").replace("(","").replace(")","").replace(",","")
-        const LTVRatio = parseInt((totalMortgagesValue/DesktopAppraisal)*100)
-        cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', LTVRatio)
-    })}
+            const totalMortgagesValue = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            const LTVRatio = (totalMortgagesValue / DesktopAppraisal) * 100
+            let roundOffValue = Math.round(LTVRatio)
+            cy.xpath("//dt[contains(text(),'Total LTV')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("%", "").replace(",", "")).and('contain', roundOffValue)
+        })
+    }
 
     addSavingsAssets() {
         cy.contains("Savings").first().click()
@@ -234,50 +242,63 @@ class Home_Equity_Loan extends BaseTest {
 
     verifyTotalAssetsValue() {
         cy.xpath("//dt[contains(text(),'Value')]//following::dd[1]").first().then(($text) => {
-        const savingsValue = $text.text().trim().replace("$", "").replace(",","").replace(".00","")
-        cy.log(savingsValue)
-        cy.xpath("//dt[contains(text(),'Total assets')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', savingsValue)
-    })}
+            const savingsValue = $text.text().trim().replace("$", "").replace(",", "").replace(".00", "")
+            cy.log(savingsValue)
+            cy.xpath("//dt[contains(text(),'Total assets')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', savingsValue)
+        })
+    }
 
     verifyTotalLiabilityValue() {
         cy.wait(5000)
         cy.xpath("//dt[contains(text(),'Balance')]//following::dd[1]").last().then(($text) => {
-        const creditCardValue = $text.text().trim().replace("$", "").replace(",","").replace(".00","")
-        cy.log(creditCardValue)
-        cy.xpath("//dt[contains(text(),'Total liabilities')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', creditCardValue)
-    })}
+            const creditCardValue = $text.text().trim().replace("$", "").replace(",", "").replace(".00", "")
+            cy.log(creditCardValue)
+            cy.xpath("//dt[contains(text(),'Total liabilities')]//following::dd[1]").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', creditCardValue)
+        })
+    }
 
     verifyNetWorthValueForAssets() {
         cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().then(($text) => {
-        const availableEquityValue = $text.text().trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")
-        cy.log(availableEquityValue)
+            var availableEquityValue = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            cy.log(availableEquityValue)
 
-        cy.xpath("//dt[contains(text(),'Total assets')]//following::dd[1]").invoke("text").then(($text) => {
-        const totalAssetsValue =  $text.trim().replace("$", "").replace(",", "")
-        cy.log(totalAssetsValue)
+            cy.xpath("//dt[contains(text(),'Total assets')]//following::dd[1]").invoke("text").then(($text) => {
+                var totalAssetsValue = $text.trim().replace("$", "").replace(",", "")
+                cy.log(totalAssetsValue)
 
-        const netWorthValue = parseInt(availableEquityValue) + parseInt(totalAssetsValue)
-        cy.log(netWorthValue)
+                var netWorthValue = parseFloat(availableEquityValue) + parseFloat(totalAssetsValue)
+                cy.log(netWorthValue)
 
-        cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace(",", "")).and('contain', netWorthValue)
-    })
-    })}
+                cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => {
+                    var Value = text.trim().replace("$", "").replace(",", "").replace(",", "")
+                    var roundOffValue = Math.round(Value)
+
+                    expect(netWorthValue).to.equal(roundOffValue)
+                })
+            })
+        })
+    }
 
     verifyNetWorthValueForLiability() {
         cy.xpath("//dt[contains(text(),'Available equity')]//following::dd[1]").first().then(($text) => {
-        const availableEquityValue = $text.text().trim().replace("$", "").replace(",", "").replace("(","").replace(")","").replace(",","")
-        cy.log(availableEquityValue)
+            const availableEquityValue = $text.text().trim().replace("$", "").replace(",", "").replace("(", "").replace(")", "").replace(",", "")
+            cy.log(availableEquityValue)
 
-        cy.xpath("//dt[contains(text(),'Total liabilities')]//following::dd[1]").invoke("text").then(($text) => {
-        const totalLiabilityValue =  $text.trim().replace("$", "").replace(",", "")
-        cy.log(totalLiabilityValue)
+            cy.xpath("//dt[contains(text(),'Total liabilities')]//following::dd[1]").invoke("text").then(($text) => {
+            const totalLiabilityValue = $text.trim().replace("$", "").replace(",", "")
+            cy.log(totalLiabilityValue)
 
-        const netWorthValue = parseInt(availableEquityValue) - parseInt(totalLiabilityValue)
-        cy.log(netWorthValue)
+            const netWorthValue = parseInt(availableEquityValue) - parseInt(totalLiabilityValue)
+            cy.log(netWorthValue)
 
-        cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => text.trim().replace("$", "").replace(",", "").replace(",", "")).and('contain', netWorthValue)
-    })
-    })}
-}
+            cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => {
+            var Value = text.trim().replace("$", "").replace(",", "").replace(",", "")
+            var roundOffValue = Math.round(Value)
+
+            expect(netWorthValue).to.equal(roundOffValue)
+            })
+        })
+        })
+    }}
 
 export default Home_Equity_Loan
