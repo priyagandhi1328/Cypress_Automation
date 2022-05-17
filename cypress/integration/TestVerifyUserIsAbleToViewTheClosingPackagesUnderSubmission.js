@@ -1,17 +1,17 @@
-/// <reference types="cypress"/>
-
+/// <reference types="cypress" />
 import Home_Equity_Loan from "../Pages/HomeEquityLoanPage"
 
 const homeEquityLoan = new Home_Equity_Loan
 
-describe('Verify that user is able to create a new contact', function () {
+describe('Verify user is able to view the closing packages under submission', function () {
+    
     beforeEach(function () {
         cy.fixture("homeEquityLoanDetails").then(function (data) {
             this.data = data;
         })
     })
 
-    it('Create a New Applicant', function () {
+    it('enter subject property and Create a New Applicant', function () {
         cy.Login()
         homeEquityLoan.clickOnMenuIcon()
         homeEquityLoan.createHomeEquityLoanDeal()
@@ -19,25 +19,15 @@ describe('Verify that user is able to create a new contact', function () {
         homeEquityLoan.createNewApplicant(this.data.Firstname,
             this.data.Lastname, this.data.AnnualIncome,
             this.data.CellPhone, this.data.Email, this.data.WorkPhone)
-    })
-
-    it('Enter Identity Details', function () {
         homeEquityLoan.enterIdentityDetails(this.data.NumberofDependants, this.data.Sin, this.data.Driverlicense, this.data.DateofBirth)
-    })
-
-    it('Enter employment Details', function () {
         homeEquityLoan.enterEmploymentDetails(this.data.SubjectProperty, this.data.EmployerName, this.data.JobTitle,this.data.TimeAtJob, this.data.TimeAtIndustry)
-    })
-
-    it('Enter Home Address', function () {
         homeEquityLoan.enterHomeAddress()
-    })
-
-    it('Enter Other Income', function () {
         homeEquityLoan.enterOtherIncome(this.data.Amount)
+        homeEquityLoan.clickOnCreditScore()
     })
 
-    it('Click on credit score', function () {
-        homeEquityLoan.clickOnCreditScore()
+    it('Verify user is able to view the closing packages under submission', function () {
+        homeEquityLoan.clickOnSubmissionTab()
+        homeEquityLoan.verifyAllTheClosingPackagesAreDisplayed()
     })
 })

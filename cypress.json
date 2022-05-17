@@ -1,19 +1,9 @@
 {
-    "pageLoadTimeout":100000,
-    "video":false,
-    "Chromewebsecurity":false,
+   "pageLoadTimeout":100000,
+   "video":false,
+   "Chromewebsecurity":false,
 
-    "env": {
-        "Url": "https://design-portal-oscar-cannect-dev.oscarintelligence.net/",
-        "email": "demo@oscarintelligence.com",
-        "password": "!4Ec^Twbas5V@1p2QUrm"
-    },
-    "reporter": "mochawesome",
-   "reporterOptions": {
-      "reportDir": "cypress/results",
-      "overwrite": false,
-      "html": true,
-      "json": false
+   "env": {
+       "Url": "https://design-portal-oscar-cannect-dev.oscarintelligence.net/"
    }
 }
-

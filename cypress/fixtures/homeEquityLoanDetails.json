@@ -20,5 +20,7 @@
     "TimeAtJob":"4",
     "TimeAtIndustry":"4",
     "Amount":"880000",
-    "DateofBirth":"08/09/1998"
+    "DateofBirth":"08/09/1998",
+    "SubjectPropertyForGDSAndTDS":"20 Edward Street, Toronto, ON, Canada",
+    "Note": "This is a new note added"
 }

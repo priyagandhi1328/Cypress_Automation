@@ -40,6 +40,33 @@ class Home_Equity_Loan extends BaseTest {
     enterIncomeAmount = "//label[contains(text(),'Amount')]//following::input[1]"
     enterAdditionalIncomePeriod = "//label[contains(text(),'Additional income type')]//following::select[2]"
     enterDateofBirth = '(//input[@placeholder="MM/DD/YYYY"])[2]'
+    creditScorebtn = "(//span[contains(text(),'Credit score')])[2]"
+    documentationTab = ':nth-child(4) > .nav-link'
+    addSuggestionButton = "button[class='btn text-center mt-2 ml-0 btn-outline-secondary']"
+    selectAllCheckbox = "(//input[@type='checkbox'])[1]"
+    deleteIcon = "[title='Remove documents'] > .btn"
+    removeBtn = ".btn-danger"
+    enterAnnualTax = "//label[contains(text(),'Annual tax')]//following::input[1]"
+    moveDocument = "Move document"
+    selectMovingDocument = "//label[contains(text(),'Appraisal')]"
+    allDocuments = "//div[@class='ml-4 mb-3']"
+    submissionType = "(//div[@class='bv-no-focus-ring'])[1]"
+    selectDocuments = "(//button[contains(text(),'Add documents')])[2]"
+    uploadFirstDocument = "(//label[@data-browse='Browse'])[1]"
+    threeDots = "(//button[@type='button'])[14]"
+    clickOnNotes = "//a[contains(text(),'Notes')]";
+    clickOnAddNewNotes = "//button[contains(text(),'Add a note')]";
+    addNote = "//textarea[@class='form-control']";
+    clickOnSave = "//button[contains(text(),'Save')]";
+    documentationTab = ":nth-child(4) > .nav-link";
+    clickOnAddDocumentButon = ".row > .text-right > div > .btn"
+    addAppraisalDocument = ":nth-child(5) > .custom-control > .custom-control-label"
+    selectDocuments = "(//button[contains(text(),'Add documents')])[2]"
+    addAmortizationSchedule = ":nth-child(4) > .custom-control > .custom-control-label"
+    enterEmailAddressUnderShare = "//label[contains(text(),'Email address')]//following::input"
+    clickOnSuggestDocsIcon = "[title='Suggest documents'] > .btn"
+    submissionTab = ":nth-child(6) > .nav-link"
+    documentPackageCheckbox = "(//input[@class='custom-control-input'])[1]"
 
     clickOnMenuIcon() {
         cy.get(this.menuIcon).click()
@@ -130,8 +157,9 @@ class Home_Equity_Loan extends BaseTest {
     }
 
     clickOnCreditScore() {
-        cy.contains('Credit score').click()
+        cy.xpath(this.creditScorebtn).click()
         cy.xpath("//button[contains(text(),'Request eID Verification')]").click()
+        cy.get('.btn-primary > span').click()
     }
 
     clickOnEditButton() {
@@ -140,6 +168,10 @@ class Home_Equity_Loan extends BaseTest {
 
     clickOnDoneButton() {
         cy.get(this.doneButton).last().click()
+    }
+
+    clickOnApplicantDoneBtn() {
+        cy.xpath(this.clickOnDone).click()
     }
 
     enterValuesUnderValuation(ApplicantEstimate, OnSiteAppraisal, DesktopAppraisal) {
@@ -230,13 +262,13 @@ class Home_Equity_Loan extends BaseTest {
 
     addSavingsAssets() {
         cy.contains("Savings").first().click()
-        cy.get(this.assertvalue).last().type(this.randomNumber())
+        cy.get(this.assertvalue).last().type(this.generateFiveDigitsRandomNumber())
         cy.wait(3000)
     }
 
     addcreditCardLiability() {
         cy.contains("Credit card").first().click()
-        cy.xpath("//label[contains(text(),'Balance')]//following::input[1]").type(this.randomNumber())
+        cy.xpath("//label[contains(text(),'Balance')]//following::input[1]").type(this.generateFiveDigitsRandomNumber())
         cy.wait(3000)
     }
 
@@ -285,20 +317,213 @@ class Home_Equity_Loan extends BaseTest {
             cy.log(availableEquityValue)
 
             cy.xpath("//dt[contains(text(),'Total liabilities')]//following::dd[1]").invoke("text").then(($text) => {
-            const totalLiabilityValue = $text.trim().replace("$", "").replace(",", "")
-            cy.log(totalLiabilityValue)
+                const totalLiabilityValue = $text.trim().replace("$", "").replace(",", "")
+                cy.log(totalLiabilityValue)
 
-            const netWorthValue = parseInt(availableEquityValue) - parseInt(totalLiabilityValue)
-            cy.log(netWorthValue)
+                const netWorthValue = parseInt(availableEquityValue) - parseInt(totalLiabilityValue)
+                cy.log(netWorthValue)
 
-            cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => {
-            var Value = text.trim().replace("$", "").replace(",", "").replace(",", "")
-            var roundOffValue = Math.round(Value)
+                cy.get(".card-footer > dl.m-0 > .d-flex > .text-15").invoke("text").then((text) => {
+                    var Value = text.trim().replace("$", "").replace(",", "").replace(",", "")
+                    var roundOffValue = Math.round(Value)
 
-            expect(netWorthValue).to.equal(roundOffValue)
+                    expect(netWorthValue).to.equal(roundOffValue)
+                })
             })
         })
+    }
+
+    clickOnDocumentationTab() {
+        cy.get(this.documentationTab).click()
+    }
+
+    clickOnAddSuggestionButton() {
+        cy.wait(5000)
+        cy.get(this.addSuggestionButton).click({ force: true })
+        cy.xpath("//div[contains(text(),'5 document requirements added.')]").should('be.visible')
+    }
+
+    verifyTheLengthOfDocuments() {
+        cy.xpath("//div[@class='mb-4 border rounded pt-3 bg-gray-200 border-gray-400']").should('have.length', 5)
+        cy.xpath("//div[@class='mb-4 border rounded pt-3 bg-gray-200 border-gray-400']").should('be.visible')
+    }
+
+    removeDocumentsAndVerify() {
+        cy.wait(5000)
+        cy.xpath(this.selectAllCheckbox).click({ force: true})
+        cy.get(this.deleteIcon).click()
+        cy.get(this.removeBtn).click()
+    }
+
+    addNewDocument() {
+        cy.get(this.documentationTab).click()
+        cy.get(this.clickOnAddDocumentButon).click()
+        cy.get(this.addAppraisalDocument).click()
+        cy.get(this.addAmortizationSchedule).click()
+        cy.xpath(this.selectDocuments).click()
+    }
+
+    verfyDocumentIsAdded() {
+        cy.contains('Appraisal').should('be.visible')
+    }
+
+    verifyAllDocumentsAreListed() {
+        cy.contains('Add documents').click()
+        cy.xpath(this.allDocuments).should('have.length', 53)
+        cy.get('.close').click()
+    }
+
+    verifyUserIsAbleToMoveDocument() {
+        cy.xpath(this.uploadFirstDocument).selectFile('cypress/Files/CreditConsent.pdf')
+        cy.wait(7000)
+        cy.xpath(this.threeDots).click()
+        cy.contains('Move document').click()
+        cy.xpath(this.selectMovingDocument).click()
+        cy.contains('OK').click()
+        cy.get('.py-2').should('be.visible')
+    }
+
+    addNewNote(Note) {
+        cy.xpath(this.clickOnNotes).click()
+        cy.xpath(this.clickOnAddNewNotes).click()
+        cy.xpath(this.addNote).type(Note)
+        cy.xpath(this.clickOnSave).click()
+    }
+
+    verifyNoteIsAdded() {
+        cy.xpath("//div[@class='card mb-4']").should('be.visible')
+    }
+
+    enterSubjectPropertyforGDS(SubjectPropertyForGDSAndTDS) {
+        cy.get(this.subjectProperty).first().type(SubjectPropertyForGDSAndTDS)
+        cy.contains(SubjectPropertyForGDSAndTDS).click()
+        cy.wait(10000)
+        cy.xpath(this.changePropertyBtn).should('be.visible')
+        cy.wait(5000)
+    }
+
+    enterAnnualTaxAndHeatUnderTaxes() {
+        cy.contains("Taxes, utilities, and fees").click()
+        cy.xpath("//span[contains(text(),'Use estimate')]").first().click()
+        cy.xpath(this.enterAnnualTax).type(this.generateFiveDigitsRandomNumber())
+        cy.xpath("//span[contains(text(),'Use estimate')]").last().click()
+        cy.wait(3000)
+    }
+
+    calculateGDSAndTDSValues() {
+        cy.contains("Fees").click()
+
+        //get the value from annual tax
+        cy.xpath("//dt[contains(text(),'Annual tax')]//following::dd[1]").then(($text) => {
+            const getAnnualTax = $text.text().trim().replace("$", "").replace(",", "").replace(",", "").replace("/yr", "")
+            cy.log(getAnnualTax)
+            //get the value from Heat
+            cy.get(":nth-child(3) > .grid > div > .mb-0").then(($text) => {
+                const getHeatValue = $text.text().trim().replace("$", "").replace("/mo", "")
+                cy.log(getHeatValue)
+
+                const totalValue = parseInt(getAnnualTax) + parseInt(getHeatValue)
+                cy.log(totalValue)
+
+
+                //get the value from annual income
+                cy.xpath("//span[contains(text(),'Annual income')]//following::dd[1]").then(($text) => {
+                    const getAnnualIncome = $text.text().trim().replace("$", "").replace(",", "").replace(",", "")
+                    cy.log(getAnnualIncome)
+
+                    //calculate GDs and TDS
+                    const GDSAndTDSValue = (totalValue / getAnnualIncome) * 100
+                    cy.log(GDSAndTDSValue)
+
+                    var roundOffValue = Math.round(GDSAndTDSValue)
+                    cy.log(roundOffValue)
+
+                    //Verify GDS value
+                    cy.get(".link").then(($text) => $text.text().trim().replace("%", "")).and('contain', roundOffValue)
+
+                    //Verify TDS value
+                    cy.get(":nth-child(6) > .card > .card-body > dl.m-0 > :nth-child(3) > .text-15").then(($text) =>
+                        $text.text().trim().replace("%", "")).and('contain', roundOffValue)
+                })
+            })
         })
-    }}
+    }
+
+    verifyShareBtnIsDisabledOrNot() {
+        cy.get('[title="Share documents by email"] > .btn')
+        .invoke('attr', 'disabled')
+        .then(disabled =>{
+            disabled ? cy.log('buttonIsDiabled') : cy.get('[title="Share documents by email"] > .btn').click()
+        })
+    }
+
+    selectAnyOneDocument() {
+        cy.xpath("(//input[@type='checkbox'])[2]").click({ force: true})
+        cy.wait(5000)
+    }
+
+    enterEmailAddress(Email) {
+        cy.wait(5000)
+        cy.xpath(this.enterEmailAddressUnderShare).type(Email)
+    }
+
+    clickOnSendButton() {
+        cy.get(':nth-child(2) > .btn-primary').click()
+        cy.get('.toast-body').should('be.visible')
+    }
+
+    clickOnAddSuggestionIcon() {
+        cy.wait(5000)
+        cy.get(this.clickOnSuggestDocsIcon).click({ force: true })
+        cy.xpath("//div[contains(text(),'5 document requirements added.')]").should('be.visible')
+    }
+
+    addSuggestionDocsAfterApplicant() {
+        cy.wait(5000)
+        cy.get(this.clickOnSuggestDocsIcon).click({ force: true })
+        cy.xpath("//div[contains(text(),'10 document requirements added.')]").should('be.visible')
+    }
+
+    clickOnApplicationTab() {
+        cy.get(this.documentationTab).click()
+    }
+
+    clickOnSubmissionTab() {
+        cy.get(this.submissionTab).click()
+    }
+
+    verifyAllTheClosingPackagesAreDisplayed() {
+        cy.xpath("//div[@class='card-header']").should('have.length', 3)
+        cy.xpath("//div[@class='card-header']").then(($text) =>
+        {
+            let totalNumberOfPackeges = `${$text.length}`
+            cy.log(totalNumberOfPackeges)
+
+        for (let i = 1; i < totalNumberOfPackeges; i += 1) {
+            cy.get("h3[class='text-16 font-600']").then(($text) => {
+                const packagename = $text.text().trim()
+                cy.log("The packages shown are:-"+ packagename)
+            })
+        }}
+    )}
+
+    verifyUploadFunctionalityForAllTheDocuments() {
+        cy.wait(5000)
+        cy.get("label[class='custom-file-label']").then(($text) =>
+        {
+            let totalNumberOfBrowseField = `${$text.length}`
+            cy.log(totalNumberOfBrowseField)
+
+        for (let i = 1; i <= totalNumberOfBrowseField; i += 1) {
+            cy.wait(5000)
+            cy.xpath("(//label[@data-browse='Browse'])"+`[${i}]`).selectFile('cypress/Files/CreditConsent.pdf')
+            }
+        }
+    )}
+
+    clickOnDocsPackageCheckbox() {
+        cy.xpath(this.documentPackageCheckbox).click()
+    }
+}
 
 export default Home_Equity_Loan

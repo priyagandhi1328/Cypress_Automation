@@ -29,6 +29,15 @@ module.exports = (on, config) => {
     return config;
 };
 
+module.exports = (on, config) => {
+  // copy any needed variables from process.env to config.env
+
+  config.env.username = process.env.USER_NAME
+  // do not forget to return the changed config object!
+  return config
+}
+
+// require("dotenv").config();
 ignoreErrors: [
   // Ignore Safari browser errors
   'ResizeObserver loop limit exceeded'
