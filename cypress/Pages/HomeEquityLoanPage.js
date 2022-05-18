@@ -66,7 +66,31 @@ class Home_Equity_Loan extends BaseTest {
     enterEmailAddressUnderShare = "//label[contains(text(),'Email address')]//following::input"
     clickOnSuggestDocsIcon = "[title='Suggest documents'] > .btn"
     submissionTab = ":nth-child(6) > .nav-link"
-    documentPackageCheckbox = "(//input[@class='custom-control-input'])[1]"
+    packageSendButton = "#collapselenderDocumentsPackage > :nth-child(3) > .row > .font-15 > [title='Send email'] > .btn"
+    applicationTab = ':nth-child(3) > .nav-link'
+    propertyValueLTV = '//span[contains(text(),"Property value")]//following::span[3]'
+    futureLTV = '//dt[contains(text(),"Future LTV")]//following::dd[1]'
+    showApplicants = '//h2[contains(text(),"Applicants")]//following::button[1]'
+    applicantName = '//h2[contains(text(),"Applicants")]//following::label[1]'
+    property = '//div[@class="text-15 mb-0 font-500"]'
+    subjectPropertyText = '(//h2[@class="my-1 text-15"])[4]'
+    valuationText = '.card-header > dl.m-0 > .d-flex > .text-15'
+    getPropertyValue = '.py-3 > .m-0 > :nth-child(1) > .grid > :nth-child(1) > .mb-0'
+    propertyValueText = ':nth-child(4) > .card > .card-body > dl.m-0 > :nth-child(1) > .text-15'
+    totalMortgages = ':nth-child(2) > .py-3 > .m-0 > :nth-child(1) > .grid > :nth-child(2) > .mb-0'
+    existingMortgages = ':nth-child(4) > .card > .card-body > dl.m-0 > :nth-child(2) > .text-15'
+    totalLTV = '.py-3 > .m-0 > :nth-child(1) > .grid > :nth-child(4) > .mb-0'
+    currentLTV = ':nth-child(4) > .card > .card-body > dl.m-0 > :nth-child(3) > .text-15'
+    selectvaluation = 'span[class="text-14 text-gray-800 align-middle"]'
+    loanButtonText = "((//p[@class='text-15 font-600 mb-0 text-lowercase'])[1]//text())[1]"
+    clickOnLoan = ' (//button[@class="card my-2 w-100 text-left card-focus-border"])[1]'
+    rate = ':nth-child(1) > .card > .card-body > dl.m-0 > :nth-child(5) > .text-15'
+    addClosingRateButton = "//button[contains(text(),'Add closing rate')]"
+    addClosingrateText = '//div[@class="py-3 px-4 d-flex justify-content-between"]//following::p[1]'
+    enterAmountFees = "//label[contains(text(),'Amount')]//following::input[1]"
+    appraisal = "//span[contains(text(),'Appraisal')]//following::span[1]"
+    brokerfees = "//span[contains(text(),'Broker fee')]//following::span[1]"
+    totalFees = "//dt[contains(text(),'Total fees')]//following::dd[1]"
 
     clickOnMenuIcon() {
         cy.get(this.menuIcon).click()
@@ -522,7 +546,182 @@ class Home_Equity_Loan extends BaseTest {
     )}
 
     clickOnDocsPackageCheckbox() {
-        cy.xpath(this.documentPackageCheckbox).click()
+        cy.get("#collapselenderDocumentsPackage > :nth-child(2) > :nth-child(2) > .flex-column > .font-weight-bold > .custom-control").click()
+    }
+
+    sendingLenderDocumentPackageAndVerify() {
+        cy.get(this.packageSendButton).click()
+        cy.get(".multiselect__tags").click()
+        cy.xpath("(//div[@class='multiselect__content-wrapper']//li//span//div)[1]").click()
+        cy.get('.btn-primary').click()
+        cy.get('.toast-body').should('be.visible')
+        cy.get('.justify-content-between > :nth-child(2) > .badge').should('be.visible')
+    }
+
+    verifyUserisAbleToAddRatings() {
+        cy.xpath("(//output)[2]//span//span").then(($text) => {
+            let totalStarCount = `${$text.length}`
+            cy.log(totalStarCount)
+            for (let i = 1; i <= totalStarCount; i += 1) {
+                cy.xpath("((//output)[2]//span//span)" + `[${i}]`).click({force:true})
+            }
+        })
+        cy.contains("Add rating").click({force:true})
+        cy.xpath('(//output)[3]').should('have.attr', 'aria-valuenow', '5')
+    }
+
+    clickOnApplicationtab(Firstname, Lastname) {
+        cy.get(this.applicationTab).click()
+        cy.wait(10000)
+        cy.xpath(this.propertyValueLTV).invoke("text").then(($text) => {
+            const propertyValueLTVText = $text.trim().replace("\n", "").replace("(", "").replace(")", "")
+            cy.log(propertyValueLTVText)
+            cy.xpath(this.futureLTV).invoke("text").then(($text) => {
+                const futureLTVText = $text.trim()
+                cy.log(futureLTVText)
+                expect(propertyValueLTVText).to.equal(futureLTVText)
+            })
+        })
+        cy.xpath(this.showApplicants).click()
+        cy.xpath(this.applicantName).invoke("text").then((text) => text.trim()).and('contain', Firstname)
+        cy.xpath(this.applicantName).invoke("text").then((text) => text.trim()).and('contain', Lastname)
+    }
+
+    verifySubjectProperty() {
+        cy.contains("Intake").click()
+        cy.xpath(this.property).invoke("text").then(($text) => {
+            const SubjectPropertyText = $text.trim()
+            cy.log(SubjectPropertyText)
+            cy.get(this.applicationTab).click()
+            cy.xpath(this.subjectPropertyText).should("contain.text", SubjectPropertyText)
+        })
+    }
+
+    verifyPropertyValue() {
+        cy.contains("Intake").click()
+        cy.get(this.getPropertyValue).invoke("text").then(($text) => {
+            const PropertyValue = $text.trim()
+            cy.log(PropertyValue)
+            cy.get(this.applicationTab).click()
+            cy.get(this.propertyValueText).should("contain.text", PropertyValue)
+        })
+    }
+
+    verifyExistingMortgages() {
+        cy.contains("Intake").click()
+        cy.get(this.totalMortgages).invoke("text").then(($text) => {
+            const TotalMortgages = $text.trim().replace("(", "").replace(")", "")
+            cy.log(TotalMortgages)
+            cy.get(this.applicationTab).click()
+            cy.get(this.existingMortgages).should("contain.text", TotalMortgages)
+        })
+    }
+
+    verifyCurrentLTV() {
+        cy.contains("Intake").click()
+        cy.get(this.totalLTV).invoke("text").then(($text) => {
+            const TotalLTV = $text.trim().replace("(", "").replace(")", "")
+            cy.log(TotalLTV)
+            cy.get(this.applicationTab).click()
+            cy.wait(5000)
+            cy.get(this.currentLTV).should("contain.text", TotalLTV)
+        })
+    }
+
+    verifyValuationForPurviewAWM() {
+        cy.contains("Purview AVM").invoke("text").then(($text) => {
+            const valuation = $text.trim().replace("(Select to change)", "")
+            cy.log(valuation)
+            cy.get(this.applicationTab).click()
+            cy.get(this.valuationText).should("contain.text", valuation)
+        })
+    }
+
+    verifyValuationForApplicationEstimate() {
+        cy.contains("Intake").click()
+        cy.get(this.selectvaluation).click()
+        cy.contains("Applicant estimate").click()
+        cy.wait(5000)
+        cy.xpath("//span[@class='text-14 text-gray-800 align-middle']").invoke("text").then(($text) => {
+            const ApplicantEstimate = $text.trim().replace("(Select to change)", "")
+            cy.log(ApplicantEstimate)
+            cy.get(this.applicationTab).click()
+            cy.get(this.valuationText).should("contain.text", ApplicantEstimate)
+        })
+    }
+
+    verifyValuationForDesktopAppraisal() {
+        cy.contains("Intake").click()
+        cy.get(this.selectvaluation).click()
+        cy.contains("Desktop appraisal").click()
+        cy.wait(5000)
+        cy.contains("Desktop appraisal").invoke("text").then(($text) => {
+            const DesktopAppraisal = $text.trim().replace("(Select to change)", "")
+            cy.log(DesktopAppraisal)
+            cy.get(this.applicationTab).click()
+            cy.get(this.valuationText).should("contain.text", DesktopAppraisal)
+        })
+    }
+
+    verifyValuationForPurviewUpper() {
+        cy.contains("Intake").click()
+        cy.get(this.selectvaluation).click()
+        cy.contains("Purview upper").click()
+        cy.wait(5000)
+        cy.xpath("//span[@class='text-14 text-gray-800 align-middle']").invoke("text").then(($text) => {
+            const PurviewUpper = $text.trim().replace("(Select to change)", "")
+            cy.log(PurviewUpper)
+            cy.get(this.applicationTab).click()
+            cy.get(this.valuationText).should("contain.text", PurviewUpper)
+        })
+    }
+
+    verifyValuationForPurviewLower() {
+        cy.contains("Intake").click()
+        cy.get(this.selectvaluation).click()
+        cy.contains("Purview lower").click()
+        cy.wait(5000)
+        cy.xpath("//span[@class='text-14 text-gray-800 align-middle']").invoke("text").then(($text) => {
+            const PurviewLower = $text.trim().replace("(Select to change)", "")
+            cy.log(PurviewLower)
+            cy.get(this.applicationTab).click()
+            cy.get(this.valuationText).should("contain.text", PurviewLower)
+        })
+    }
+
+    verifyUserIsAbleToTakeLoan() {
+        cy.get(this.applicationTab).click()
+        cy.wait(10000)
+        cy.xpath(this.loanButtonText).invoke("text").then(($text) => {
+            const Interest = $text.trim()
+            cy.log(Interest)
+            cy.xpath(this.clickOnLoan).click()
+            cy.get(this.rate).should("contain.text", Interest)
+
+        })
+    }
+
+    verifyUserIsAbleToAddFees() {
+        const uuid = () => Cypress._.random(15000, 16000)
+        const id = uuid()
+        const testname = id
+
+        cy.get(this.applicationTab).click()
+        cy.get('[data-v-f680ce5a=""][data-v-78a7b9cf=""] > .d-flex > .btn').click()
+        cy.get('[aria-label="Add Appraisal"]').click()
+        cy.xpath(this.enterAmountFees).type(testname)
+        cy.contains("Done").click()
+        cy.xpath(this.appraisal).invoke("text").then(($text) => {
+            const Appraisal = $text.trim().replace(")", "").replace("(", "").replace("$", "").replace(".00", "").replace(",", "")
+            cy.log(Appraisal)
+            cy.xpath(this.brokerfees).invoke("text").then(($text) => {
+                const BrokerFees = $text.trim().replace(")", "").replace("(", "").replace("$", "").replace(".00", "").replace(",", "")
+                cy.log(BrokerFees)
+                var totalfees = parseFloat(Appraisal) + parseFloat(BrokerFees)
+                cy.log(totalfees)
+                cy.xpath(this.totalFees).invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', totalfees)
+            })
+        })
     }
 }
 

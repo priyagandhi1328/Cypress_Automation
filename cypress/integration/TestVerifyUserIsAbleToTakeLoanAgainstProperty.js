@@ -1,41 +1,42 @@
-/// <reference types="cypress" />
+/// <reference types="cypress"/>
+
 import Home_Equity_Loan from "../Pages/HomeEquityLoanPage"
 
 const homeEquityLoan = new Home_Equity_Loan
 
-describe('Verify that user is able to sent document package under submission.', function () {
-        
+describe('Verify user is able to take a loan a against a property', function () {
     beforeEach(function () {
         cy.fixture("homeEquityLoanDetails").then(function (data) {
             this.data = data;
         })
     })
 
-    it('enter subject property and Create a New Applicant', function () {
+    it('Enter Subject Property', function () {
         cy.Login()
         homeEquityLoan.clickOnMenuIcon()
         homeEquityLoan.createHomeEquityLoanDeal()
         homeEquityLoan.enterSubjectProperty(this.data.SubjectProperty)
+    })
+
+    it('Create a New Applicant', function () {
         homeEquityLoan.createNewApplicant(this.data.Firstname,
             this.data.Lastname, this.data.AnnualIncome,
             this.data.CellPhone, this.data.Email, this.data.WorkPhone)
         homeEquityLoan.enterIdentityDetails(this.data.NumberofDependants, this.data.Sin, this.data.Driverlicense, this.data.DateofBirth)
-        homeEquityLoan.enterEmploymentDetails(this.data.SubjectProperty, this.data.EmployerName, this.data.JobTitle,this.data.TimeAtJob, this.data.TimeAtIndustry)
+        homeEquityLoan.enterEmploymentDetails(this.data.SubjectProperty, this.data.EmployerName, this.data.JobTitle, this.data.TimeAtJob, this.data.TimeAtIndustry)
         homeEquityLoan.enterHomeAddress()
         homeEquityLoan.enterOtherIncome(this.data.Amount)
         homeEquityLoan.clickOnCreditScore()
     })
 
-    it('upload the documents under documentation tab', function () {
-        homeEquityLoan.clickOnDocumentationTab()
-        homeEquityLoan.addSuggestionDocsAfterApplicant()
-        homeEquityLoan.verifyUploadFunctionalityForAllTheDocuments()
+    it('Add assets and verify net worth value', function () {
+        homeEquityLoan.addSavingsAssets()
+        homeEquityLoan.clickOnDoneButton()
+        homeEquityLoan.verifyTotalAssetsValue()
+        homeEquityLoan.verifyNetWorthValueForAssets()
     })
 
-    it('Sent the document packages under submission', function () {
-        homeEquityLoan.clickOnSubmissionTab()
-        homeEquityLoan.verifyAllTheClosingPackagesAreDisplayed()
-        homeEquityLoan.clickOnDocsPackageCheckbox()
-        homeEquityLoan.sendingLenderDocumentPackageAndVerify()
+    it('User is able to take a loan against property', function () {
+        homeEquityLoan.verifyUserIsAbleToTakeLoan()    
     })
 })
