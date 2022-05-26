@@ -1,3 +1,5 @@
+require('cy-verify-downloads').addCustomCommand();
+
 Cypress.Commands.add('Login', () => {
 
     const email = Cypress.env("Oscar_Email")
@@ -13,4 +15,10 @@ Cypress.Commands.add('Login', () => {
     cy.contains("Log in to Oscar").click()
     cy.wait(5000)
     cy.xpath("//a[contains(text(),'New deal')]").should('be.visible')
+})
+
+Cypress.Commands.add('Logout', () => {
+    cy.get('.ml-1').click()
+    cy.contains("Log out").click()
+    cy.contains("Log in to Oscar").should('be.visible')
 })

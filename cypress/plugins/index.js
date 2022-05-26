@@ -37,6 +37,12 @@ module.exports = (on, config) => {
   return config
 }
 
+const { isFileExist } = require('cy-verify-downloads');
+
+module.exports = (on, config) => {
+  on('task', { isFileExist })
+}
+
 // require("dotenv").config();
 ignoreErrors: [
   // Ignore Safari browser errors

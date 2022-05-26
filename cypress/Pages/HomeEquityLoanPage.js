@@ -91,6 +91,24 @@ class Home_Equity_Loan extends BaseTest {
     appraisal = "//span[contains(text(),'Appraisal')]//following::span[1]"
     brokerfees = "//span[contains(text(),'Broker fee')]//following::span[1]"
     totalFees = "//dt[contains(text(),'Total fees')]//following::dd[1]"
+    onHoldBtn = ":nth-child(2) > :nth-child(3) > .btn"
+    addReactivationDate = "button[class='btn m-1 btn-outline-primary']"
+    bankName = '//h3[@class="text-16 font-600 mb-3"]//following::h6'
+    clickOnApplicationTab = "//a[contains(text(),'Application')]"
+    clickOnSummary = "//a[contains(text(),'Summary')]"
+    existingMortgagesText = '(//div[@class="text-15 flex-grow-1 custom-control custom-checkbox"])'
+    clickOnPlusButton = '//div[@class="plus_tab m-1 py-1 px-3"]'
+    loanOptionButton = "//button[contains(text(),'Select this option')]"
+    clickOnOption2 = '(//div[@class="py-2 px-3"])[2]'
+    createOnlineForm = "//span[contains(text(),'Create Online Forms')]"
+    submissionType = "(//div[@class='bv-no-focus-ring'])[1]//select//option['Prepayment privilleges'][1]"
+    disclosureList = "//h3[contains(text(),'Disclosure')]//following::div[1]//div[@class='card-focus-border']"
+    commitmentList = "//h3[contains(text(),'Commitment conditions')]//following::div[1]//div[@class='card-focus-border']"
+    specialLoanList = "//h3[contains(text(),'Special loan conditions')]//following::div[1]//div[@class='card-focus-border']"
+    submissionTypeButton = "(//div[@class='bv-no-focus-ring'])[1]//select"
+    statement = "//label[contains(text(),'Statement')]//following::textarea"
+    specialLoanList = "//h3[contains(text(),'Special loan conditions')]//following::div[1]//div[@class='card-focus-border']"
+    requestLoanDoneButton = "(//button[contains(text(),'Done')])[1]"
 
     clickOnMenuIcon() {
         cy.get(this.menuIcon).click()
@@ -184,6 +202,7 @@ class Home_Equity_Loan extends BaseTest {
         cy.xpath(this.creditScorebtn).click()
         cy.xpath("//button[contains(text(),'Request eID Verification')]").click()
         cy.get('.btn-primary > span').click()
+        cy.wait(5000)
     }
 
     clickOnEditButton() {
@@ -230,7 +249,7 @@ class Home_Equity_Loan extends BaseTest {
 
     selectExpiryDate() {
         cy.contains("Insurance").click()
-        cy.xpath("//label[contains(text(),'Expiry date')]//following::input[1]").type(this.randomDate())
+        cy.xpath("//label[contains(text(),'Expiry date')]//following::input[1]").type(this.randomFutureDate())
     }
 
     verifyAvailableEquityValueForApplicantEstimate(ApplicantEstimate) {
@@ -370,11 +389,12 @@ class Home_Equity_Loan extends BaseTest {
     verifyTheLengthOfDocuments() {
         cy.xpath("//div[@class='mb-4 border rounded pt-3 bg-gray-200 border-gray-400']").should('have.length', 5)
         cy.xpath("//div[@class='mb-4 border rounded pt-3 bg-gray-200 border-gray-400']").should('be.visible')
+        cy.wait(5000)
     }
 
     removeDocumentsAndVerify() {
         cy.wait(5000)
-        cy.xpath(this.selectAllCheckbox).click({ force: true})
+        cy.xpath(this.selectAllCheckbox).click({ force: true })
         cy.get(this.deleteIcon).click()
         cy.get(this.removeBtn).click()
     }
@@ -405,6 +425,7 @@ class Home_Equity_Loan extends BaseTest {
         cy.xpath(this.selectMovingDocument).click()
         cy.contains('OK').click()
         cy.get('.py-2').should('be.visible')
+        cy.wait(5000)
     }
 
     addNewNote(Note) {
@@ -475,14 +496,14 @@ class Home_Equity_Loan extends BaseTest {
 
     verifyShareBtnIsDisabledOrNot() {
         cy.get('[title="Share documents by email"] > .btn')
-        .invoke('attr', 'disabled')
-        .then(disabled =>{
-            disabled ? cy.log('buttonIsDiabled') : cy.get('[title="Share documents by email"] > .btn').click()
-        })
+            .invoke('attr', 'disabled')
+            .then(disabled => {
+                disabled ? cy.log('buttonIsDiabled') : cy.get('[title="Share documents by email"] > .btn').click()
+            })
     }
 
     selectAnyOneDocument() {
-        cy.xpath("(//input[@type='checkbox'])[2]").click({ force: true})
+        cy.xpath("(//input[@type='checkbox'])[2]").click({ force: true })
         cy.wait(5000)
     }
 
@@ -494,6 +515,7 @@ class Home_Equity_Loan extends BaseTest {
     clickOnSendButton() {
         cy.get(':nth-child(2) > .btn-primary').click()
         cy.get('.toast-body').should('be.visible')
+        cy.wait(5000)
     }
 
     clickOnAddSuggestionIcon() {
@@ -518,32 +540,33 @@ class Home_Equity_Loan extends BaseTest {
 
     verifyAllTheClosingPackagesAreDisplayed() {
         cy.xpath("//div[@class='card-header']").should('have.length', 3)
-        cy.xpath("//div[@class='card-header']").then(($text) =>
-        {
+        cy.xpath("//div[@class='card-header']").then(($text) => {
             let totalNumberOfPackeges = `${$text.length}`
             cy.log(totalNumberOfPackeges)
 
-        for (let i = 1; i < totalNumberOfPackeges; i += 1) {
-            cy.get("h3[class='text-16 font-600']").then(($text) => {
-                const packagename = $text.text().trim()
-                cy.log("The packages shown are:-"+ packagename)
-            })
-        }}
-    )}
+            for (let i = 1; i < totalNumberOfPackeges; i += 1) {
+                cy.get("h3[class='text-16 font-600']").then(($text) => {
+                    const packagename = $text.text().trim()
+                    cy.log("The packages shown are:-" + packagename)
+                })
+            }
+        }
+        )
+    }
 
     verifyUploadFunctionalityForAllTheDocuments() {
         cy.wait(5000)
-        cy.get("label[class='custom-file-label']").then(($text) =>
-        {
+        cy.get("label[class='custom-file-label']").then(($text) => {
             let totalNumberOfBrowseField = `${$text.length}`
             cy.log(totalNumberOfBrowseField)
 
-        for (let i = 1; i <= totalNumberOfBrowseField; i += 1) {
-            cy.wait(5000)
-            cy.xpath("(//label[@data-browse='Browse'])"+`[${i}]`).selectFile('cypress/Files/CreditConsent.pdf')
+            for (let i = 1; i <= totalNumberOfBrowseField; i += 1) {
+                cy.wait(5000)
+                cy.xpath("(//label[@data-browse='Browse'])" + `[${i}]`).selectFile('cypress/Files/CreditConsent.pdf')
             }
         }
-    )}
+        )
+    }
 
     clickOnDocsPackageCheckbox() {
         cy.get("#collapselenderDocumentsPackage > :nth-child(2) > :nth-child(2) > .flex-column > .font-weight-bold > .custom-control").click()
@@ -556,6 +579,7 @@ class Home_Equity_Loan extends BaseTest {
         cy.get('.btn-primary').click()
         cy.get('.toast-body').should('be.visible')
         cy.get('.justify-content-between > :nth-child(2) > .badge').should('be.visible')
+        cy.wait(5000)
     }
 
     verifyUserisAbleToAddRatings() {
@@ -563,10 +587,10 @@ class Home_Equity_Loan extends BaseTest {
             let totalStarCount = `${$text.length}`
             cy.log(totalStarCount)
             for (let i = 1; i <= totalStarCount; i += 1) {
-                cy.xpath("((//output)[2]//span//span)" + `[${i}]`).click({force:true})
+                cy.xpath("((//output)[2]//span//span)" + `[${i}]`).click({ force: true })
             }
         })
-        cy.contains("Add rating").click({force:true})
+        cy.contains("Add rating").click({ force: true })
         cy.xpath('(//output)[3]').should('have.attr', 'aria-valuenow', '5')
     }
 
@@ -697,7 +721,6 @@ class Home_Equity_Loan extends BaseTest {
             cy.log(Interest)
             cy.xpath(this.clickOnLoan).click()
             cy.get(this.rate).should("contain.text", Interest)
-
         })
     }
 
@@ -722,6 +745,147 @@ class Home_Equity_Loan extends BaseTest {
                 cy.xpath(this.totalFees).invoke("text").then((text) => text.trim().replace("$", "").replace(",", "")).and('contain', totalfees)
             })
         })
+    }
+
+    clickOnDownloadIconUnderSubmission() {
+        cy.get("#collapselenderDocumentsPackage > :nth-child(3) > .row > .font-15 > [title='Download documents'] > .btn > .bi-download").click()
+        cy.verifyDownload('documents.pdf');
+    }
+
+    clickOnOnHoldButton() {
+        cy.wait(5000)
+        cy.get(this.onHoldBtn).click()
+    }
+
+    clickOnAddReactivationDateButton() {
+        cy.get(this.addReactivationDate).click()
+    }
+
+    selectReactivationDateAndVerify() {
+        cy.xpath("//label[contains(text(),'Reactivate on')]//following::input[1]").clear().type(this.randomFutureDate())
+        cy.xpath("//button[contains(text(),'Place on hold')]").click({ force: true })
+        cy.get('.col-12 > .bg-gray-200').should('be.visible')
+    }
+
+    addPrimaryAgent() {
+        cy.xpath("//h2[contains(text(),'Agents')]//following::div[@class='multiselect__tags'][1]").click()
+        cy.xpath("(//li//span[contains(text(),'San Yun Han')])[1]").click()
+        cy.wait(2000)
+    }
+
+    verifyUserIsAbleToSeeExistingLoans() {
+        cy.xpath(this.clickOnSummary).click()
+        cy.xpath(this.bankName).then(($text) => {
+            let Bankname = `${$text.length}`
+            cy.log(Bankname)
+            for (let i = 1; i <= Bankname; i += 1) {
+                cy.xpath(this.bankName + `[${i}]`).then(($text) => {
+                    const BanknameText = $text.text().trim()
+                    cy.log(BanknameText)
+                })
+            }
+            cy.xpath(this.clickOnApplicationTab).click()
+            cy.xpath(this.existingMortgagesText).then(($text) => {
+                let ExistingMortgages = `${$text.length}`
+                cy.log(ExistingMortgages)
+                for (let i = 1; i <= ExistingMortgages; i += 1) {
+                    cy.xpath(this.existingMortgagesText + `[${i}]`).then(($text) => {
+                        const ExistingMortgagesText = $text.text().trim()
+                        cy.log(ExistingMortgagesText)
+                    })
+                }
+                expect(ExistingMortgages).to.equal(Bankname)
+            })
+        })
+    }
+
+    verifyUserIsAbleToCreateMultipleLoans() {
+        cy.get(this.applicationTab).click()
+        cy.xpath(this.clickOnPlusButton).click()
+        cy.wait(5000)
+        cy.xpath(this.clickOnOption2).click()
+        cy.contains("Select this option").should('be.visible')
+        cy.wait(6000)
+        cy.xpath(this.clickOnLoan).click()
+        cy.xpath(this.loanOptionButton).click()
+        cy.contains("Selected option").should('be.visible')
+    }
+
+    clickOnCreateOnlineFormBtnAndVerify() {
+        cy.get(this.createOnlineForm).click()
+        cy.get("a[class='list-group-item d-flex justify-content-between align-items-center list-group-item-action']").then(($text) => {
+            let onlineForm = `${$text.length}`
+            cy.log(onlineForm)
+            for (let i = 1; i <= onlineForm; i += 1) {
+                cy.get("a[class='list-group-item d-flex justify-content-between align-items-center list-group-item-action']" + `[${i}]`).then(($text) => {
+                    const onlineFormText = $text.text().trim()
+                    cy.log(onlineFormText)
+                })
+            }
+        })
+    }
+
+    verifyUserIsAbleToAddDisclosure(Disclosure) {
+        cy.get(":nth-child(6) > .nav-link").click();
+        cy.get(".py-5 > .d-flex > .btn").click();
+        cy.wait(5000)
+        cy.xpath(this.disclosureList).then(($text) => {
+            let totalNumberOfBrowseField = `${$text.length}`
+            cy.log(totalNumberOfBrowseField)
+            cy.contains("Add a disclosure").click();
+            cy.xpath(this.statement).type(Disclosure);
+            cy.get(".btn-primary").click();
+            cy.wait(5000)
+            cy.xpath(this.disclosureList).then(($text) => {
+                let a = `${$text.length}`
+                cy.log(a)
+                expect(totalNumberOfBrowseField).to.not.equal(a)
+            })
+        })
+    }
+
+    verifyUserIsAbleToAddCommitmentConditions(Commitment) {
+        cy.get(":nth-child(6) > .nav-link").click();
+        cy.get(".py-5 > .d-flex > .btn").click();
+        cy.wait(5000)
+        cy.xpath(this.commitmentList).then(($text) => {
+            let totalCommitmentConditions = `${$text.length}`
+            cy.log(totalCommitmentConditions)
+            cy.contains("Add a commitment condition").click();
+            cy.xpath(this.submissionTypeButton).select("REQUIRED_PRIOR_TO_CLOSE");
+            cy.get("textarea").click().type(Commitment);
+            cy.get(".btn-primary").click();
+            cy.wait(5000)
+            cy.xpath(this.commitmentList).then(($text) => {
+                let a = `${$text.length}`
+                cy.log(a)
+                expect(totalCommitmentConditions).to.not.equal(a)
+            })
+        })
+    }
+
+    verifyUserIsAbleToAddSpecialLoanConditions(SpecialLoan) {
+        cy.get(":nth-child(6) > .nav-link").click();
+        cy.get(".py-5 > .d-flex > .btn").click();
+        cy.wait(5000)
+        cy.xpath(this.specialLoanList).then(($text) => {
+            let totalSpecialConditions = `${$text.length}`
+            cy.log(totalSpecialConditions)
+            cy.contains("Add a special condition").click();
+            cy.xpath(this.submissionTypeButton).select("OTHER_CONDITION");
+            cy.get("textarea").click().type(SpecialLoan);
+            cy.get(".btn-primary").click();
+            cy.wait(5000)
+            cy.xpath(this.specialLoanList).then(($text) => {
+                let a = `${$text.length}`
+                cy.log(a)
+                expect(totalSpecialConditions).to.not.equal(a)
+            })
+        })
+    }
+
+    clickOnRequestLoanDoneBtn(){
+        cy.xpath(this.requestLoanDoneButton).click()
     }
 }
 
