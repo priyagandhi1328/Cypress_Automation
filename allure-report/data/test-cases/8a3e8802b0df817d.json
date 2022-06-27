@@ -1,0 +1,50 @@
+{
+  "uid" : "8a3e8802b0df817d",
+  "name" : "Verify that user is able to see preferred contact",
+  "fullName" : "Verify that user is able to see preferred contact.Verify that user is able to see preferred contact",
+  "historyId" : "79f50cf6553c3117949be0bfcb5c4260",
+  "time" : {
+    "start" : 1656349584455,
+    "stop" : 1656349631212,
+    "duration" : 46757
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "broken",
+  "statusMessage" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+  "statusTrace" : "CypressError: `cy.screenshot()` timed out waiting `30000ms` to complete.\n                    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:165568:81\n                    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n                    at https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:8144:41\n                    at tryCatcher (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:13022:23)\n                    at Promise._settlePromiseFromHandler (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:10957:31)\n                    at Promise._settlePromise (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11014:18)\n                    at Promise._settlePromise0 (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11059:10)\n                    at Promise._settlePromises (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:11135:18)\n                    at _drainQueueStep (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7729:12)\n                    at _drainQueue (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7722:9)\n                    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7738:5)\n                    at Async.drainQueues (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/runner/cypress_runner.js:7608:14)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "package",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8a3e8802b0df817d.json",
+  "parameterValues" : [ ]
+}

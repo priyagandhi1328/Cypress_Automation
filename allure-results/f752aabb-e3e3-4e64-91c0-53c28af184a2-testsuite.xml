@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1656345237829' stop='1656345265151'>
+    <name>Test Verify Industry Contact</name>
+    <title>Test Verify Industry Contact</title>
+    <test-cases>
+        <test-case start='1656345237858' status='failed' stop='1656345265085'>
+            <name>Verify that user is able to add existing occupations </name>
+            <title>Verify that user is able to add existing occupations </title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>expected '4' to equal '1'</message>
+                <stack-trace>AssertionError: expected '4' to equal '1'
+                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\integration\ContactsAndIndustryContacts\TestVerifyUserIsAbletoAddExistingOccupationtags.js:416:34)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

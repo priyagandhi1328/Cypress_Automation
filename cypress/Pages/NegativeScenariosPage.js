@@ -16,7 +16,7 @@ class Deals extends BaseTest {
 
     enterInvalidEmailAndVerify() {
         cy.visit(Cypress.env("Url"))        
-        cy.get("input[type='email']").type(this.generateRandpmEmail())
+        cy.get("input[type='email']").type(this.generateRandomEmail())
         cy.contains("Log in to Oscar").click()
         cy.wait(3000)
         cy.get(".alert").should("be.visible")

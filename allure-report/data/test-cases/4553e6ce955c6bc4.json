@@ -1,0 +1,50 @@
+{
+  "uid" : "4553e6ce955c6bc4",
+  "name" : "Verify that user is able to add existing occupations ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add existing occupations ",
+  "historyId" : "3c6fa6f8eb62b46b40be7c822992e53c",
+  "time" : {
+    "start" : 1656345237858,
+    "stop" : 1656345265085,
+    "duration" : 27227
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected '4' to equal '1'",
+  "statusTrace" : "AssertionError: expected '4' to equal '1'\n                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\ContactsAndIndustryContacts\\TestVerifyUserIsAbletoAddExistingOccupationtags.js:416:34)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add existing occupations "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4553e6ce955c6bc4.json",
+  "parameterValues" : [ ]
+}

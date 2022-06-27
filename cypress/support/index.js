@@ -4,6 +4,7 @@
 import './commands'
 require('cypress-xpath')
 import '@shelex/cypress-allure-plugin';
+import "cypress-real-events/support";
 require('@shelex/cypress-allure-plugin');
 before(() => {
   process.env. BASE_URL = Cypress.env("BASE_URL");

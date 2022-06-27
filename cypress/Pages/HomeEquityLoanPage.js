@@ -131,7 +131,7 @@ class Home_Equity_Loan extends BaseTest {
     }
 
     enterLoanAmount() {
-        const uuid = () => Cypress._.random(50000, 50150)
+        const uuid = () => Cypress._.random(500000, 501500)
         const id = uuid()
         const testname = id
         cy.wait(3000)
@@ -169,7 +169,6 @@ class Home_Equity_Loan extends BaseTest {
         cy.xpath(this.enterDriverLicence).click()
         cy.wait(3000)
         cy.xpath(this.enterDriverLicence).type(Driverlicense)
-
     }
 
     enterEmploymentDetails(SubjectProperty, EmployerName, JobTitle, TimeAtJob, TimeAtIndustry) {
@@ -214,7 +213,7 @@ class Home_Equity_Loan extends BaseTest {
     }
 
     clickOnApplicantDoneBtn() {
-        cy.xpath(this.clickOnDone).click()
+        cy.xpath(this.clickOnDone).click({force: true})
     }
 
     enterValuesUnderValuation(ApplicantEstimate, OnSiteAppraisal, DesktopAppraisal) {
@@ -401,6 +400,7 @@ class Home_Equity_Loan extends BaseTest {
 
     addNewDocument() {
         cy.get(this.documentationTab).click()
+        cy.wait(5000)
         cy.get(this.clickOnAddDocumentButon).click()
         cy.get(this.addAppraisalDocument).click()
         cy.get(this.addAmortizationSchedule).click()
@@ -487,7 +487,7 @@ class Home_Equity_Loan extends BaseTest {
                     cy.get(".link").then(($text) => $text.text().trim().replace("%", "")).and('contain', roundOffValue)
 
                     //Verify TDS value
-                    cy.get(":nth-child(6) > .card > .card-body > dl.m-0 > :nth-child(3) > .text-15").then(($text) =>
+                    cy.get(":nth-child(6) > .card > .card-body > dl.m-0 > :nth-child(5) > .text-15").then(($text) =>
                         $text.text().trim().replace("%", "")).and('contain', roundOffValue)
                 })
             })
@@ -719,7 +719,8 @@ class Home_Equity_Loan extends BaseTest {
         cy.xpath(this.loanButtonText).invoke("text").then(($text) => {
             const Interest = $text.trim()
             cy.log(Interest)
-            cy.xpath(this.clickOnLoan).click()
+            cy.xpath(this.clickOnLoan).click({force: true})
+            cy.wait(4000)
             cy.get(this.rate).should("contain.text", Interest)
         })
     }
@@ -730,7 +731,7 @@ class Home_Equity_Loan extends BaseTest {
         const testname = id
 
         cy.get(this.applicationTab).click()
-        cy.get('[data-v-f680ce5a=""][data-v-78a7b9cf=""] > .d-flex > .btn').click()
+        cy.get('[data-v-f680ce5a=""][data-v-488ecbce=""] > .d-flex > .btn').click()
         cy.get('[aria-label="Add Appraisal"]').click()
         cy.xpath(this.enterAmountFees).type(testname)
         cy.contains("Done").click()
@@ -807,7 +808,9 @@ class Home_Equity_Loan extends BaseTest {
         cy.contains("Select this option").should('be.visible')
         cy.wait(6000)
         cy.xpath(this.clickOnLoan).click()
-        cy.xpath(this.loanOptionButton).click()
+        cy.wait(3000)
+        cy.xpath(this.loanOptionButton).click({force: true})
+        cy.wait(5000)
         cy.contains("Selected option").should('be.visible')
     }
 
@@ -886,6 +889,20 @@ class Home_Equity_Loan extends BaseTest {
 
     clickOnRequestLoanDoneBtn(){
         cy.xpath(this.requestLoanDoneButton).click()
+    }
+
+    verifyUserIsAbleToSeeExistingLoansForPurchase() {
+        cy.xpath(this.clickOnSummary).click()
+        cy.xpath(this.bankName).then(($text) => {
+            let Bankname = `${$text.length}`
+            cy.log(Bankname)
+            for (let i = 1; i <= Bankname; i += 1) {
+                cy.xpath(this.bankName + `[${i}]`).then(($text) => {
+                    const BanknameText = $text.text().trim()
+                    cy.log(BanknameText)
+                })
+            }
+        })
     }
 }
 

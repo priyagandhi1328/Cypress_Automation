@@ -1,0 +1,48 @@
+{
+  "uid" : "1e088732e520968d",
+  "name" : "Verify that user is able to remove industry contact ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to remove industry contact ",
+  "historyId" : "640fcd61e724ade796f06e4ff730df10",
+  "time" : {
+    "start" : 1656347449757,
+    "stop" : 1656347468836,
+    "duration" : 19079
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to remove industry contact "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1e088732e520968d.json",
+  "parameterValues" : [ ]
+}

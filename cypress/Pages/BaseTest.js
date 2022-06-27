@@ -40,10 +40,22 @@ class BaseTest {
         return val;
     }
 
-    generateRandpmEmail() {
+    generateRandomEmail() {
         const faker = require("faker");
         let randomEmail = faker.internet.email()
         return randomEmail;
+    }
+
+    generateRandomFirstName() {
+        const faker = require("faker");
+        let randomFirstName = faker.name.firstName()
+        return randomFirstName;
+    }
+
+    generateRandomLastName() {
+        const faker = require("faker");
+        let randomLastName = faker.name.lastName()
+        return randomLastName;
     }
 
     generateTenDigitsRandomNumber() {

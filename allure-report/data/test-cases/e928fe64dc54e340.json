@@ -1,0 +1,85 @@
+{
+  "uid" : "e928fe64dc54e340",
+  "name" : "Verify that user is able to add existing industries ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add existing industries ",
+  "historyId" : "ecfdb9d1a476cb6327873617256f1613",
+  "time" : {
+    "start" : 1656355616774,
+    "stop" : 1656355653255,
+    "duration" : 36481
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add existing industries "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "f73ab3b05c550ab1",
+      "status" : "broken",
+      "statusDetails" : "Timed out retrying after 4050ms: `cy.click()` failed because the center of this element is hidden from view:\n                \n                `<a data-v-4640f5ea=\"\" href=\"/contacts/industry-contacts\" class=\"nav-link\" target=\"_self\">...</a>`\n                \n                Fix this problem, or use `{force: true}` to disable error checking.\n                \n                https://on.cypress.io/element-cannot-be-interacted-with",
+      "time" : {
+        "start" : 1656349264088,
+        "stop" : 1656349293871,
+        "duration" : 29783
+      }
+    }, {
+      "uid" : "9efc5753f077bba4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656348765941,
+        "stop" : 1656348800860,
+        "duration" : 34919
+      }
+    }, {
+      "uid" : "daf5b31ca6ae0643",
+      "status" : "failed",
+      "statusDetails" : "Timed out retrying after 4000ms: Expected to find element: `//a[contains(text(),'New deal')]`, but never found it.",
+      "time" : {
+        "start" : 1656347260413,
+        "stop" : 1656347300105,
+        "duration" : 39692
+      }
+    }, {
+      "uid" : "30546b0c2c4d4a2",
+      "status" : "failed",
+      "statusDetails" : "Timed out retrying after 4000ms: Expected to find element: `//a[contains(text(),'New deal')]`, but never found it.",
+      "time" : {
+        "start" : 1656345185738,
+        "stop" : 1656345229771,
+        "duration" : 44033
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e928fe64dc54e340.json",
+  "parameterValues" : [ ]
+}

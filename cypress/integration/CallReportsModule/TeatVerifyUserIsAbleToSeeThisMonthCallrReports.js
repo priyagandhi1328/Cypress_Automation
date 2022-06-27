@@ -7,7 +7,7 @@ const callReports = new Callreports
 
 describe('Verify that user is able to see this month call reports.', function () {
 
-    it('Verify that user is able to see last 7 days call reports.', function() {
+    it('Verify that user is able to see this month call reports.', function() {
         cy.Login()
         homeEquityLoan.clickOnMenuIcon()
         callReports.clickOnCallreports() 

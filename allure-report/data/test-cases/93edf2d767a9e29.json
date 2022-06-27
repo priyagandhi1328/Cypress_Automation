@@ -1,0 +1,50 @@
+{
+  "uid" : "93edf2d767a9e29",
+  "name" : "Verify that user is able to add industries ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add industries ",
+  "historyId" : "4f0de7e456cd486bb8d16c045519c58d",
+  "time" : {
+    "start" : 1656345273276,
+    "stop" : 1656345300897,
+    "duration" : 27621
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .card > .card-body > :nth-child(6) > .badge`, but never found it.",
+  "statusTrace" : "AssertionError: Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .card > .card-body > :nth-child(6) > .badge`, but never found it.\n                    at Contacts.verifyUserIsAbleToAddIndustries (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\ContactsAndIndustryContacts\\TestVerifyUserIsAbleToAddIndustries.js:348:8)\n                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\ContactsAndIndustryContacts\\TestVerifyUserIsAbleToAddIndustries.js:1503:22)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add industries "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "93edf2d767a9e29.json",
+  "parameterValues" : [ ]
+}

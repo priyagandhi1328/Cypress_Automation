@@ -1,0 +1,83 @@
+{
+  "uid" : "12a02995c046d820",
+  "name" : "Verify that user is able to add industries ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add industries ",
+  "historyId" : "4f0de7e456cd486bb8d16c045519c58d",
+  "time" : {
+    "start" : 1656355695911,
+    "stop" : 1656355723192,
+    "duration" : 27281
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add industries "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "e85b47168e859565",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349337541,
+        "stop" : 1656349364094,
+        "duration" : 26553
+      }
+    }, {
+      "uid" : "7fab968bacc9c324",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656348841667,
+        "stop" : 1656348868356,
+        "duration" : 26689
+      }
+    }, {
+      "uid" : "e2ef738e77a86082",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656347353092,
+        "stop" : 1656347379484,
+        "duration" : 26392
+      }
+    }, {
+      "uid" : "93edf2d767a9e29",
+      "status" : "failed",
+      "statusDetails" : "Timed out retrying after 4000ms: Expected to find element: `:nth-child(1) > .card > .card-body > :nth-child(6) > .badge`, but never found it.",
+      "time" : {
+        "start" : 1656345273276,
+        "stop" : 1656345300897,
+        "duration" : 27621
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "12a02995c046d820.json",
+  "parameterValues" : [ ]
+}

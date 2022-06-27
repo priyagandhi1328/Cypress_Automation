@@ -1,0 +1,26 @@
+{
+  "total" : 2,
+  "items" : [ {
+    "uid" : "79d3aa102580aab5fb15dee11ac44f5c",
+    "name" : "Test Verify Industry Contact",
+    "statistic" : {
+      "failed" : 2,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 8,
+      "unknown" : 0,
+      "total" : 10
+    }
+  }, {
+    "uid" : "3cb183b1f3813e2a609976071d61250c",
+    "name" : "Verify that user is able to see preferred contact",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    }
+  } ]
+}

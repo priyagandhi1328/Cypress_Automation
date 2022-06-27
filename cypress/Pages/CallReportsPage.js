@@ -58,24 +58,24 @@ class Callreports extends BaseTest {
             })
         })
 
-        cy.get("tbody>tr>td").then(($el) => {
+        // cy.get("tbody>tr>td").then(($el) => {
 
-            if(cy.get($el).contains("")) {
-                return cy.log("No data available")
-            }
-            else {
-                cy.xpath("//tr//th[7]//following::tr//td[7]").then(($text) => {
-                    let rowsCount = `${$text.length}`
-                    cy.log(rowsCount)
-                    for (let i = 1; i <= rowsCount; i += 1) {
-                        cy.xpath("(//tr//th[7]//following::tr//td[7])" + `[${i}]`).invoke("text").then(($text) => {
-                            const rowsData = $text.trim()
-                            cy.log(rowsData)
-                        })
-                    }
-                })
-            }
-        })
+        //     if(cy.get($el).contains("")) {
+        //         return cy.log("No data available")
+        //     }
+        //     else {
+        //         cy.xpath("//tr//th[7]//following::tr//td[7]").then(($text) => {
+        //             let rowsCount = `${$text.length}`
+        //             cy.log(rowsCount)
+        //             for (let i = 1; i <= rowsCount; i += 1) {
+        //                 cy.xpath("(//tr//th[7]//following::tr//td[7])" + `[${i}]`).invoke("text").then(($text) => {
+        //                     const rowsData = $text.trim()
+        //                     cy.log(rowsData)
+        //                 })
+        //             }
+        //         })
+        //     }
+        // })
     }
 
     selectLastSevenDaysCallsFilterAndVerify() {

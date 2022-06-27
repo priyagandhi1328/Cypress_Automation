@@ -1,0 +1,111 @@
+[ {
+  "uid" : "6aa54d9cd91adcfb",
+  "name" : "Verify that user is able to see preferred contact",
+  "time" : {
+    "start" : 1656355952663,
+    "stop" : 1656355991249,
+    "duration" : 38586
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "74ede8d0d3ac2eea",
+  "name" : "Verify that user is able to search industry contact by Industry ",
+  "time" : {
+    "start" : 1656355999498,
+    "stop" : 1656356031763,
+    "duration" : 32265
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "8225ab245743fb55",
+  "name" : "Verify that user is able to remove industry contact ",
+  "time" : {
+    "start" : 1656355799162,
+    "stop" : 1656355819993,
+    "duration" : 20831
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4a67c369b77774e6",
+  "name" : "Verify that user is able to search industry contact by name ",
+  "time" : {
+    "start" : 1656355868358,
+    "stop" : 1656355901651,
+    "duration" : 33293
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ba6d2eed97299259",
+  "name" : "Verify that user is able to add industry contact ",
+  "time" : {
+    "start" : 1656355730406,
+    "stop" : 1656355755271,
+    "duration" : 24865
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3c6a7e5e043a008b",
+  "name" : "Verify that user is able to search industry contact by occupation ",
+  "time" : {
+    "start" : 1656355909307,
+    "stop" : 1656355944741,
+    "duration" : 35434
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "12a02995c046d820",
+  "name" : "Verify that user is able to add industries ",
+  "time" : {
+    "start" : 1656355695911,
+    "stop" : 1656355723192,
+    "duration" : 27281
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "78604a4bb1b57f7b",
+  "name" : "Verify that user is able to search industry contact by email ",
+  "time" : {
+    "start" : 1656355827104,
+    "stop" : 1656355860408,
+    "duration" : 33304
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f7411d7e92809748",
+  "name" : "Verify that user is able to add existing occupations ",
+  "time" : {
+    "start" : 1656355660621,
+    "stop" : 1656355688351,
+    "duration" : 27730
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "deecad55d24a6ad9",
+  "name" : "Verify that user is able to add Occupations ",
+  "time" : {
+    "start" : 1656355763398,
+    "stop" : 1656355791476,
+    "duration" : 28078
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e928fe64dc54e340",
+  "name" : "Verify that user is able to add existing industries ",
+  "time" : {
+    "start" : 1656355616774,
+    "stop" : 1656355653255,
+    "duration" : 36481
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,50 @@
+{
+  "uid" : "c2e6cf2c4cde5acc",
+  "name" : "Verify that user is able to search industry contact by Industry ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to search industry contact by Industry ",
+  "historyId" : "97b7addaea920f5925f5468380cf20c",
+  "time" : {
+    "start" : 1656345562018,
+    "stop" : 1656345597039,
+    "duration" : 35021
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Timed out retrying after 4000ms: Expected to find element: `(//span[@class=\"badge text-12 mr-1 badge-secondary\"])[2]`, but never found it.",
+  "statusTrace" : "AssertionError: Timed out retrying after 4000ms: Expected to find element: `(//span[@class=\"badge text-12 mr-1 badge-secondary\"])[2]`, but never found it.\n                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\ContactsAndIndustryContacts\\TestVerifyUserIsAbleToSerchUserByIndustry.js:540:14)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to search industry contact by Industry "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "c2e6cf2c4cde5acc.json",
+  "parameterValues" : [ ]
+}

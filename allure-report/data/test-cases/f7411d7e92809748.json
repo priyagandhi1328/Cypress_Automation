@@ -1,0 +1,83 @@
+{
+  "uid" : "f7411d7e92809748",
+  "name" : "Verify that user is able to add existing occupations ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add existing occupations ",
+  "historyId" : "3c6fa6f8eb62b46b40be7c822992e53c",
+  "time" : {
+    "start" : 1656355660621,
+    "stop" : 1656355688351,
+    "duration" : 27730
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add existing occupations "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "7330dbc9b57de8c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349301878,
+        "stop" : 1656349329906,
+        "duration" : 28028
+      }
+    }, {
+      "uid" : "676046527d0467fc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656348808253,
+        "stop" : 1656348835004,
+        "duration" : 26751
+      }
+    }, {
+      "uid" : "a4a94fd4e5889643",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656347316699,
+        "stop" : 1656347345201,
+        "duration" : 28502
+      }
+    }, {
+      "uid" : "4553e6ce955c6bc4",
+      "status" : "failed",
+      "statusDetails" : "expected '4' to equal '1'",
+      "time" : {
+        "start" : 1656345237858,
+        "stop" : 1656345265085,
+        "duration" : 27227
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "f7411d7e92809748.json",
+  "parameterValues" : [ ]
+}

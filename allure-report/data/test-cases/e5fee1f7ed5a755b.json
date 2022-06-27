@@ -1,0 +1,48 @@
+{
+  "uid" : "e5fee1f7ed5a755b",
+  "name" : "Verify that user is able to search industry contact by occupation ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to search industry contact by occupation ",
+  "historyId" : "4beb48f374751d3970487c991c9b257d",
+  "time" : {
+    "start" : 1656345478534,
+    "stop" : 1656345510371,
+    "duration" : 31837
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to search industry contact by occupation "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e5fee1f7ed5a755b.json",
+  "parameterValues" : [ ]
+}

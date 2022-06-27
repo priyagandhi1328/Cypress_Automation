@@ -1,0 +1,82 @@
+{
+  "uid" : "8225ab245743fb55",
+  "name" : "Verify that user is able to remove industry contact ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to remove industry contact ",
+  "historyId" : "640fcd61e724ade796f06e4ff730df10",
+  "time" : {
+    "start" : 1656355799162,
+    "stop" : 1656355819993,
+    "duration" : 20831
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to remove industry contact "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "67a4e26dd853e670",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349436386,
+        "stop" : 1656349455932,
+        "duration" : 19546
+      }
+    }, {
+      "uid" : "ca5fd96151b69f8d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656348938848,
+        "stop" : 1656348958278,
+        "duration" : 19430
+      }
+    }, {
+      "uid" : "1e088732e520968d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656347449757,
+        "stop" : 1656347468836,
+        "duration" : 19079
+      }
+    }, {
+      "uid" : "e9594905f51c507",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656345373688,
+        "stop" : 1656345392948,
+        "duration" : 19260
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8225ab245743fb55.json",
+  "parameterValues" : [ ]
+}

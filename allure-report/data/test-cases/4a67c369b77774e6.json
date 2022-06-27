@@ -1,0 +1,82 @@
+{
+  "uid" : "4a67c369b77774e6",
+  "name" : "Verify that user is able to search industry contact by name ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to search industry contact by name ",
+  "historyId" : "e90c9422074d8d68fde47d8e416e4693",
+  "time" : {
+    "start" : 1656355868358,
+    "stop" : 1656355901651,
+    "duration" : 33293
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to search industry contact by name "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "d30cf024d7d3f0fa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349502804,
+        "stop" : 1656349534952,
+        "duration" : 32148
+      }
+    }, {
+      "uid" : "8075d6b0de21258b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349003675,
+        "stop" : 1656349035861,
+        "duration" : 32186
+      }
+    }, {
+      "uid" : "2282d6747473b08",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656347516699,
+        "stop" : 1656347547437,
+        "duration" : 30738
+      }
+    }, {
+      "uid" : "6d1156d012183479",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656345440031,
+        "stop" : 1656345471079,
+        "duration" : 31048
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "4a67c369b77774e6.json",
+  "parameterValues" : [ ]
+}

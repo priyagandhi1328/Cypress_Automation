@@ -1,0 +1,50 @@
+{
+  "uid" : "a589de1d281a3a20",
+  "name" : "Verify that user is able to search industry contact by Industry ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to search industry contact by Industry ",
+  "historyId" : "97b7addaea920f5925f5468380cf20c",
+  "time" : {
+    "start" : 1656349638833,
+    "stop" : 1656349671218,
+    "duration" : 32385
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected 'Leif' to equal 'Williamson'",
+  "statusTrace" : "AssertionError: expected 'Leif' to equal 'Williamson'\n                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\ContactsAndIndustryContacts\\TestVerifyUserIsAbleToSerchUserByIndustry.js:542:40)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to search industry contact by Industry "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "a589de1d281a3a20.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,89 @@
+{
+  "uid" : "3c6a7e5e043a008b",
+  "name" : "Verify that user is able to search industry contact by occupation ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to search industry contact by occupation ",
+  "historyId" : "4beb48f374751d3970487c991c9b257d",
+  "time" : {
+    "start" : 1656355909307,
+    "stop" : 1656355944741,
+    "duration" : 35434
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Timed out retrying after 4000ms: Expected to find element: `(//span[@class=\"badge text-12 mr-1 badge-secondary\"])[2]`, but never found it.",
+  "statusTrace" : "AssertionError: Timed out retrying after 4000ms: Expected to find element: `(//span[@class=\"badge text-12 mr-1 badge-secondary\"])[2]`, but never found it.\n                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\integration\\ContactsAndIndustryContacts\\TestVerifyUserIsAbleToSearchIndustryContactByOccupation.js:508:14)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to search industry contact by occupation "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "761c725ffc208bb3",
+      "status" : "failed",
+      "statusDetails" : "Timed out retrying after 4000ms: Expected to find element: `(//span[@class=\"badge text-12 mr-1 badge-secondary\"])[2]`, but never found it.",
+      "time" : {
+        "start" : 1656349542708,
+        "stop" : 1656349577410,
+        "duration" : 34702
+      }
+    }, {
+      "uid" : "f8f3d2e1dc208f58",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349043838,
+        "stop" : 1656349075410,
+        "duration" : 31572
+      }
+    }, {
+      "uid" : "4c70901492200cf2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656347555185,
+        "stop" : 1656347586774,
+        "duration" : 31589
+      }
+    }, {
+      "uid" : "e5fee1f7ed5a755b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656345478534,
+        "stop" : 1656345510371,
+        "duration" : 31837
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "3c6a7e5e043a008b.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1656355695861' stop='1656355723192'>
+    <name>Test Verify Industry Contact</name>
+    <title>Test Verify Industry Contact</title>
+    <test-cases>
+        <test-case start='1656355695911' status='passed' stop='1656355723192'>
+            <name>Verify that user is able to add industries </name>
+            <title>Verify that user is able to add industries </title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

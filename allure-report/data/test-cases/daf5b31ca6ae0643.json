@@ -1,0 +1,50 @@
+{
+  "uid" : "daf5b31ca6ae0643",
+  "name" : "Verify that user is able to add existing industries ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add existing industries ",
+  "historyId" : "ecfdb9d1a476cb6327873617256f1613",
+  "time" : {
+    "start" : 1656347260413,
+    "stop" : 1656347300105,
+    "duration" : 39692
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Timed out retrying after 4000ms: Expected to find element: `//a[contains(text(),'New deal')]`, but never found it.",
+  "statusTrace" : "AssertionError: Timed out retrying after 4000ms: Expected to find element: `//a[contains(text(),'New deal')]`, but never found it.\n                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\\support\\index.js:38550:48)",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add existing industries "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "daf5b31ca6ae0643.json",
+  "parameterValues" : [ ]
+}

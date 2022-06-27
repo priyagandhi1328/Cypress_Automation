@@ -1,0 +1,20 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1656349542684' stop='1656349577500'>
+    <name>Test Verify Industry Contact</name>
+    <title>Test Verify Industry Contact</title>
+    <test-cases>
+        <test-case start='1656349542708' status='failed' stop='1656349577410'>
+            <name>Verify that user is able to search industry contact by occupation </name>
+            <title>Verify that user is able to search industry contact by occupation </title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timed out retrying after 4000ms: Expected to find element: `(//span[@class="badge text-12 mr-1 badge-secondary"])[2]`, but never found it.</message>
+                <stack-trace>AssertionError: Timed out retrying after 4000ms: Expected to find element: `(//span[@class="badge text-12 mr-1 badge-secondary"])[2]`, but never found it.
+                    at Context.eval (https://design-portal-oscar-cannect-dev.oscarintelligence.net/__cypress/tests?p=cypress\integration\ContactsAndIndustryContacts\TestVerifyUserIsAbleToSearchIndustryContactByOccupation.js:508:14)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

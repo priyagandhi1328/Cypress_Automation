@@ -1,0 +1,48 @@
+{
+  "uid" : "e2ef738e77a86082",
+  "name" : "Verify that user is able to add industries ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add industries ",
+  "historyId" : "4f0de7e456cd486bb8d16c045519c58d",
+  "time" : {
+    "start" : 1656347353092,
+    "stop" : 1656347379484,
+    "duration" : 26392
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add industries "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e2ef738e77a86082.json",
+  "parameterValues" : [ ]
+}

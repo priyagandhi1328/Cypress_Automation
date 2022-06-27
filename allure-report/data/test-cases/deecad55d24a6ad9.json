@@ -1,0 +1,82 @@
+{
+  "uid" : "deecad55d24a6ad9",
+  "name" : "Verify that user is able to add Occupations ",
+  "fullName" : "Test Verify Industry Contact.Verify that user is able to add Occupations ",
+  "historyId" : "53ad0a527556e4bcc3ec6bd89d3b31f7",
+  "time" : {
+    "start" : 1656355763398,
+    "stop" : 1656355791476,
+    "duration" : 28078
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to add Occupations "
+  }, {
+    "name" : "package",
+    "value" : "Test Verify Industry Contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "a9f11447d37f7e5e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349402059,
+        "stop" : 1656349428730,
+        "duration" : 26671
+      }
+    }, {
+      "uid" : "2d007cc789f9c793",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656348905901,
+        "stop" : 1656348931460,
+        "duration" : 25559
+      }
+    }, {
+      "uid" : "4bec3338d033a5d3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656347416839,
+        "stop" : 1656347443039,
+        "duration" : 26200
+      }
+    }, {
+      "uid" : "b15ed03b273eec21",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656345339680,
+        "stop" : 1656345365981,
+        "duration" : 26301
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "deecad55d24a6ad9.json",
+  "parameterValues" : [ ]
+}

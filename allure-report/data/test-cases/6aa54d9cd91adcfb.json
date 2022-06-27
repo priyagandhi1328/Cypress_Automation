@@ -1,0 +1,83 @@
+{
+  "uid" : "6aa54d9cd91adcfb",
+  "name" : "Verify that user is able to see preferred contact",
+  "fullName" : "Verify that user is able to see preferred contact.Verify that user is able to see preferred contact",
+  "historyId" : "79f50cf6553c3117949be0bfcb5c4260",
+  "time" : {
+    "start" : 1656355952663,
+    "stop" : 1656355991249,
+    "duration" : 38586
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 4,
+  "retriesStatusChange" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "suite",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "testClass",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "testMethod",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "package",
+    "value" : "Verify that user is able to see preferred contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "8a3e8802b0df817d",
+      "status" : "broken",
+      "statusDetails" : "`cy.screenshot()` timed out waiting `30000ms` to complete.",
+      "time" : {
+        "start" : 1656349584455,
+        "stop" : 1656349631212,
+        "duration" : 46757
+      }
+    }, {
+      "uid" : "818979a3f3b2ab25",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656349082654,
+        "stop" : 1656349119493,
+        "duration" : 36839
+      }
+    }, {
+      "uid" : "94efbb675b0b9d8b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656347595725,
+        "stop" : 1656347632978,
+        "duration" : 37253
+      }
+    }, {
+      "uid" : "a51b0c11331d55bb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1656345517954,
+        "stop" : 1656345554184,
+        "duration" : 36230
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "6aa54d9cd91adcfb.json",
+  "parameterValues" : [ ]
+}
