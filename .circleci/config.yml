@@ -9,4 +9,4 @@ orbs:
 workflows:
   say-hello-workflow:
     jobs:
-      - cypress-io/run
+      - cypress/run
