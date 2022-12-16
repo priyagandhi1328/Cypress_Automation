@@ -10,3 +10,4 @@ workflows:
   say-hello-workflow:
     jobs:
       - cypress/run
+      
