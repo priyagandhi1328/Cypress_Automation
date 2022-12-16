@@ -4,6 +4,6 @@
    "Chromewebsecurity":false,
 
    "env": {
-       "Url": "https://design-portal-oscar-cannect-dev.oscarintelligence.net/dashboard"
+            "Url": "https://agent-cannect-production.oscarintelligence.net/login"
    }
 }
