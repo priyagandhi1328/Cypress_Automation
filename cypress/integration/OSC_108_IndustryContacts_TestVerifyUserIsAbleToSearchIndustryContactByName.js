@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import Home_Equity_Loan from "../../Pages/HomeEquityLoanPage"
-import Contacts from "../../Pages/ContactsAndIndustryContactsPage"
+import Home_Equity_Loan from "../Pages/HomeEquityLoanPage"
+import Contacts from "../Pages/ContactsAndIndustryContactsPage"
 
 const homeEquityLoan = new Home_Equity_Loan
 const industryContacts = new Contacts
