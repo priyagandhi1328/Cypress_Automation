@@ -10,5 +10,5 @@ workflows:
             - cypress/install
           record: true
           parallel: true
-          parallelism: 2
-          group: 2 machines
+          parallelism: 3
+          group: 3 machines
