@@ -1,9 +1,21 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@2.2.0
+  cypress: cypress-io/cypress@1
+executors:
+  mac:
+    macos:
+      xcode: 10.1.0
 workflows:
-    example-workflow:
+  build:
+    jobs:
+      - cypress/run:
+          name: Linux test
+
+wworkflows:
+    
       jobs:
         - cypress/run:
+            parallelism: 5 
             parallel: true 
-            parallelism: 4
+            record: false 
+            component: false 
