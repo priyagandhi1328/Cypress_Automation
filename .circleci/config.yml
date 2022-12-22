@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-    cypress: cypress-io/cypress@2
+  cypress: cypress-io/cypress@1
 workflows:
   build:
     jobs:
@@ -10,5 +10,5 @@ workflows:
             - cypress/install
           record: true
           parallel: true
-          parallelism: 3
-          group: 3 machines
+          parallelism: 2
+          group: 2 machines
