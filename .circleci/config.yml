@@ -1,21 +1,14 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
-executors:
-  mac:
-    macos:
-      xcode: 10.1.0
 workflows:
   build:
     jobs:
+      - cypress/install
       - cypress/run:
-          name: Linux test
-
-wworkflows:
-    
-      jobs:
-        - cypress/run:
-            parallelism: 5 
-            parallel: true 
-            record: false 
-            component: false 
+          requires:
+            - cypress/install
+          record: true
+          parallel: true
+          parallelism: 2
+          group: 2 machines
