@@ -1,39 +1,346 @@
+# requires the following environment variables be set in the CircleCI project
+#
+# APP_NAME            eg: oscar-design-portal
+# IMAGE_NAME          eg: oscar/design-portal
+# AWS_ECR_REPO_NAME   eg: oscar/design-portal
+# GITHUB_FINGERPRINT  eg: XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX
+#
+# the rest are supplied by the build context
+#
 version: 2.1
+
 orbs:
-  circleci-cli: circleci/circleci-cli@0.1.9
+  aws-ecr: circleci/aws-ecr@6.4.0
+  aws-cli: circleci/aws-cli@0.1.16
+
 jobs:
+  lint:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+      - run:
+          name: Install Dependencies
+          command: npm ci
+      - save_cache:
+          key: npm-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - /home/circleci/.npm
+      - run:
+          name: Run Linter
+          command: npm run lint:ci
+
+  i18n:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Run i18n Extract
+          command: |
+            npx vue-i18n-extract report -v "./**/*.?(js|vue)" -l "./locales/*.?(js|json)" \
+            | sed -r "s/[[:cntrl:]]\[[0-9]{1,3}m//g" \
+            | tee /tmp/i18n-report
+
+      - store_artifacts:
+          path: /tmp/i18n-report
+          destination: i18n-report
+
   build:
     docker:
-      - image: cimg/node:16.14.2
+      - image: circleci/buildpack-deps
+    steps:
+      - checkout
+      - setup_remote_docker:
+          # There is a bug in docker 17, so we need to set 19 until CircleCI ups its defaults
+          # https://discuss.circleci.com/t/docker-build-fails-with-nonsensical-eperm-operation-not-permitted-copyfile/37364/33#post_34:~:text=It%20seems%20that%20there%20must%20have%20been%20a%20bug%20in%2017.09.0%2Dce%20which%20is%20fixed%20in%2019.03.13
+          version: 19.03.13
+      - run:
+          name: Build image
+          command: docker build -t $IMAGE_NAME .
+      - run:
+          name: Persist Image to Workspace
+          command: docker save $IMAGE_NAME > ./image.tar
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./image.tar
 
-    working_directory: ~/repo
+  test_unit:
+    machine:
+      image: ubuntu-2004:202104-01
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Load image
+          command: docker load < image.tar
+      - run:
+          name: ECR Login
+          command: aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 728951055026.dkr.ecr.ca-central-1.amazonaws.com
+
+      - run:
+          name: Create docker network
+          command: |
+            docker network create ci-test
+      - run:
+          name: Start  mongo
+          command: |
+            docker run -d \
+              -v $(pwd)/docker/mongo-replica-set-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh \
+              --network ci-test \
+              --name mongo \
+              -p 27017:27017 \
+              mongo:4.2.0
+      - run:
+          name: Start the product service
+          command: |
+            docker run -d \
+              -e DATABASE_URL=mongodb://mongo:27017/db?replicaSet=rs0 \
+              -e NODE_ENV=production \
+              -p 3090:3000 \
+              --network ci-test \
+              --name product \
+              728951055026.dkr.ecr.ca-central-1.amazonaws.com/oscar/product-service
+
+      - run:
+          name: Start the deal service
+          command: |
+            docker run -d \
+              -e DATABASE_URL=mongodb://mongo:27017/db?replicaSet=rs0 \
+              -e JWT_SIGNING_SECRET=testsigningsecret \
+              -e GATEWAY_URL=http://gateway:3000 \
+              -e NODE_ENV=production \
+              --env TEST_USERNAME \
+              --env TEST_PASSWORD \
+              --name deal \
+              --network ci-test \
+              -p 3000:3000 \
+              728951055026.dkr.ecr.ca-central-1.amazonaws.com/oscar/deal-service
+
+      - run:
+          name: Start the gateway
+          command: |
+            docker run -d \
+              -e WEB_SOCKET_SERVICES='' \
+              -e FEDERATION_SERVICES="product-service=http://product:3000;deal-service=http://deal:3000" \
+              -e SERVICES_CHECK_RETRIES=50 \
+              -p 4000:3000 \
+              --network ci-test \
+              --name gateway \
+              728951055026.dkr.ecr.ca-central-1.amazonaws.com/oscar/gateway
+
+      - run:
+          name: Install dockerize
+          command: |
+            apt-get update && apt-get install -y wget
+
+            sudo wget https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-linux-amd64-v0.6.1.tar.gz \
+              && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.6.1.tar.gz --overwrite \
+              && rm dockerize-linux-amd64-v0.6.1.tar.gz
+
+      - run:
+          name: Wait for services…
+          command: |
+            dockerize \
+              -wait http://localhost:3090/.well-known/apollo/server-health \
+              -wait http://localhost:3000/.well-known/apollo/server-health \
+              -wait http://localhost:4000/.well-known/apollo/server-health
+
+      - run:
+          name: Start the portal and run jest tests
+          command: |
+            docker run \
+              -e DATABASE_URL=mongodb://mongo:27017/db?replicaSet=rs0 \
+              -e JWT_SIGNING_SECRET=testsigningsecret \
+              -e GATEWAY_URL=http://gateway:3000 \
+              -e GATEWAY_CLIENT_URL=http://gateway:3000 \
+              -e CI=true \
+              --env TEST_USERNAME \
+              --env TEST_PASSWORD \
+              --env ACTIVE_CAMPAIGN_BASE_URL \
+              --env ACTIVE_CAMPAIGN_API_KEY \
+              --env ACTIVE_CAMPAIGN_ACCOUNT_ID \
+              --network ci-test \
+              --name agent \
+              --entrypoint=npm $IMAGE_NAME run test
+
+  test_cypress:
+    machine:
+      image: ubuntu-1604:202004-01
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Load image
+          command: docker load < image.tar
+      - run:
+          name: Install Cypress plugins
+          command: |
+            npm --prefix ./e2e ci
+      - run:
+          name: Start app
+          command: |
+            docker run -d -h web --name web $IMAGE_NAME
+      - run:
+          name: Run tests
+          command: |
+            docker run \
+              -w /e2e \
+              -v $(pwd)/e2e:/e2e \
+              -v $(pwd)/scripts:/scripts \
+              -e CYPRESS_baseUrl=http://web:3000 \
+              --network="container:web" \
+              --entrypoint=/scripts/wait-for-it.sh cypress/included:4.8.0 \
+                web:3000 --timeout=60 --strict -- cypress run
+      - store_artifacts:
+          path: e2e/cypress/videos
+      - store_artifacts:
+          path: e2e/cypress/screenshots
+
+  push_to_ecr:
+    executor: aws-cli/default
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+          at: .
+      - run:
+          name: Load image
+          command: docker load < image.tar
+      - aws-cli/setup
+      - aws-ecr/ecr-login:
+          region: AWS_DEFAULT_REGION
+      - run:
+          name: Push Image
+          command: |
+            docker tag $IMAGE_NAME $AWS_ECR_URL/$AWS_ECR_REPO_NAME:latest
+            docker push $AWS_ECR_URL/$AWS_ECR_REPO_NAME:latest
+            docker tag $IMAGE_NAME $AWS_ECR_URL/$AWS_ECR_REPO_NAME:$CIRCLE_SHA1
+            docker push $AWS_ECR_URL/$AWS_ECR_REPO_NAME:$CIRCLE_SHA1
+
+  infra_update_tag:
+    docker:
+      - image: '728951055026.dkr.ecr.ca-central-1.amazonaws.com/oscar/cli:circleci'
+        aws_auth:
+          aws_access_key_id: $AWS_ACCESS_KEY_ID
+          aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+
+    environment:
+      AWS_DEFAULT_REGION: ca-central-1
+      EKS_CLUSTER_NPR: npr
+      APP_NAME: design-portal
 
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - $GITHUB_FINGERPRINT
+      - run:
+          name: Update File
+          command: |
+            git clone git@github.com:oscartechnologies/oscar-infrastructure.git
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            git config --global user.email "infra@oscarintelligence.com"
+            git config --global user.name "Deployer"
 
-      - run: npm ci
+            cd ./oscar-infrastructure
+            LOG_LEVEL=INFO python /app/scripts/oscarctl.py update_app --app=$APP_NAME --tag=$CIRCLE_SHA1 --target=$CIRCLE_BRANCH
+            git add .
+            git commit -m "Updating $APP_NAME to $CIRCLE_SHA1"
+            git push origin master
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+  ecs-deploy:
+    docker:
+      - image: '728951055026.dkr.ecr.ca-central-1.amazonaws.com/oscar/ecs-cli'
+        aws_auth:
+          aws_access_key_id: $AWS_ACCESS_KEY_ID
+          aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+    environment:
+      AWS_DEFAULT_REGION: ca-central-1
+      APP_NAME: design-portal
 
-      # we need to install CircleCI CLI tool
-      # to run the "manual" tests
-      - circleci-cli/install
-      - run: npm test
-      - run: npm run manual:tests
-      - run: npm run docs
+    steps:
+      - run:
+          name: Deploy To ECS
+          command: |
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            aws configure set default.region ca-central-1
+            deployer serviceUp prod agent
+
+  ecs-dev-deploy:
+    docker:
+      - image: '728951055026.dkr.ecr.ca-central-1.amazonaws.com/oscar/ecs-cli'
+        aws_auth:
+          aws_access_key_id: $AWS_ACCESS_KEY_ID
+          aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+    environment:
+      AWS_DEFAULT_REGION: ca-central-1
+      APP_NAME: design-portal
+
+    steps:
+      - run:
+          name: Deploy To ECS
+          command: |
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+            aws configure set default.region ca-central-1
+            deployer serviceUp prod agentDev
+
 
 workflows:
-  orb_tests:
+  version: 2
+  build_and_release:
     jobs:
-      - build
+      - lint
+      - i18n
 
+      - build:
+          requires:
+            - lint
+            - i18n
+
+      - test_unit:
+          context: oscar-intelligence-deploy
+          requires:
+            - build
+
+      # - test_cypress:
+      #     requires:
+      #       - build
+
+      - push_to_ecr:
+          context: oscar-intelligence-deploy
+          requires:
+            - test_unit
+          filters:
+            branches:
+              only:
+                - master
+                - production
+
+      - infra_update_tag:
+          context: oscar-intelligence-deploy
+          requires:
+            - push_to_ecr
+          filters:
+            branches:
+              only: master
+      - ecs-dev-deploy:
+          context: oscar-intelligence-deploy
+          requires:
+            - push_to_ecr
+          filters:
+            branches:
+              only: master
+      - ecs-deploy:
+          context: oscar-intelligence-deploy
+          requires:
+            - push_to_ecr
+          filters:
+            branches:
+              only: production
